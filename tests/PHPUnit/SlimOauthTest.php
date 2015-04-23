@@ -258,4 +258,27 @@ class SlimOauthTest extends \PHPUnit_Framework_TestCase {
 
 	}
 
+	/**
+	 * @expectedException \Lti\Exceptions\MissingRequiredParameterException
+	 */
+	function test_verifySignature_exception(){
+
+		$params = [
+			"oauth_nonce"            => "snarktastic",
+			"oauth_timestamp"        => 1429803093,
+			"oauth_consumer_key"     => "myonhasnokeys",
+			"oauth_signature_method" => "HMAC-SHA1",
+			"oauth_version"          => "1.0",
+			"oauth_callback"         => "about:blank",
+		];
+
+		$slimOauth = new \Lti\SlimOauth($this->endpoint, $this->getMockNonceMapper());
+		$slimOauth->setTimestampExpiration(0);
+
+		$expected = $slimOauth->verifySignature($this->clientSecret, $params);
+
+		$this->assertFalse($expected);
+
+	}
+
 }

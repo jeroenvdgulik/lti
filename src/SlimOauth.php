@@ -28,7 +28,9 @@ class SlimOauth {
 	);
 
 	/**
-	 *
+	 * the general use case is tied to a specific request
+	 * @param string $endpoint The requested endpoint to use in signing
+	 * @param NonceMapperInterface $$nonmapper The data source for checking nonces
 	 */
 	public function __construct($endpoint, NonceMapperInterface $nonceMapper){
 		$this->setEndpoint($endpoint);
@@ -36,28 +38,36 @@ class SlimOauth {
 	}
 
 	/**
-	 *
+	 * protected properties that *could* change given certain use cases should have
+	 * an accessor method
+	 * @param string $endopint The URL to use in the signature
 	 */
 	public function setEndpoint($endpoint){
 		$this->endpoint = $endpoint;
 	}
 
 	/**
-	 *
+	 * protected properties that *could* change given certain use cases should have
+	 * an accessor method
+	 * @param string $clientSecret The client secret to use for the signing key
 	 */
 	public function setClientSecret($clientSecret){
 		$this->clientSecret = $clientSecret;
 	}
 
 	/**
-	 *
+	 * this allows the adjustment of the timestamp tolerance (in minutes). a 0 (zero)
+	 * value means no expiration
+	 * @param numeric $minutes The max age in minutes of a valid timestamp
 	 */
 	public function setTimestampExpiration($minutes){
 		$this->timestampExpiration = $minutes;
 	}
 
 	/**
-	 *
+	 * method to take an array of params and a client secret and validate the oauth_signature
+	 * @param string $clientSecret The client secret to use for the signing key
+	 * @param array $params The array of both required and additional params sent as the payload
 	 */
 	public function verifySignature($clientSecret, array $params){
 		if(!isset($params["oauth_signature"])){
@@ -73,7 +83,10 @@ class SlimOauth {
 	}
 
 	/**
-	 *
+	 * create a signature hash based on the given array of both required and additional
+	 * params
+	 * @param string $clientSecret The client secret to use for the signing key
+	 * @param array $params The array of both required and additional params used for the signature
 	 */
 	public function createSignature($clientSecret, array $params){
 		$this->setClientSecret($clientSecret);
@@ -85,14 +98,16 @@ class SlimOauth {
 	}
 
 	/**
-	 *
+	 * create the signature hash
+	 * @param string $body The properly formatted string of request params
+	 * @param  string $signingKey The key use to sign the hash
 	 */
 	protected function createHash($body, $signingKey) {
 		return base64_encode(hash_hmac('sha1', $body, $signingKey, true));
 	}
 
 	/**
-	 * @param string $clientSecret The client secret
+	 * combine a known secret and token specific secret to create a signing key
 	 * @param string $tokenSecret **UNUSED** by LTI, but part of the Oauth Spec
 	 */
 	protected function makeSigningKey($tokenSecret = '') {
@@ -100,7 +115,10 @@ class SlimOauth {
 	}
 
 	/**
-	 *
+	 * properly encode and concat paramters to create the reqeust body used in creating
+	 * a signature
+	 * @param array $params The array of both required and additional params used for the signature
+	 * @param string $method The HTTP verb of the request
 	 */
 	protected function makeSignatureBody(array $params, $method = 'POST') {
 
@@ -124,7 +142,9 @@ class SlimOauth {
 	}
 
 	/**
-	 *
+	 * take an array of params and verify the presence of the required params and validate
+	 * the format of the ones that dictate a format
+	 * @param array $params The array of both required params used for the signature
 	 */
 	protected function validateRequiredParameters(array $params) {
 		foreach($this->requiredKeys as $key){
@@ -144,7 +164,8 @@ class SlimOauth {
 	}
 
 	/**
-	 *
+	 * check to see if the nonce is valid
+	 * @param string $nonce The only-used-once value to check
 	 */
 	protected function validateNonce($nonce) {
 		if($this->nonceMapper->get($nonce) !== null){
@@ -155,7 +176,8 @@ class SlimOauth {
 	}
 
 	/**
-	 *
+	 * timestamps should have a max age, check it here
+	 * @param string $timestamp The timestamp to check
 	 */
 	protected function validateTimestamp($timestamp) {
 		$expire = $this->timestampExpiration;
@@ -166,7 +188,8 @@ class SlimOauth {
 	}
 
 	/**
-	 *
+	 * enforce the use of oauth 1.0
+	 * @param string $version The string of the version
 	 */
 	protected function validateVersion($version) {
 		if ($version != self::VERSION) {
@@ -175,7 +198,8 @@ class SlimOauth {
 	}
 
 	/**
-	 *
+	 * enforce the use of HMAC-SHA1
+	 * @param string $method The hashing method
 	 */
 	protected function validateSigningMethod($method) {
 		if ($method != self::METHOD) {
@@ -184,10 +208,11 @@ class SlimOauth {
 	}
 
 	/**
-	 *
+	 * if a callback is provided, make sure it's meaningless
+	 * @param string $callback The URL for the callback
 	 */
-	protected function validateCallback($callbackUrl) {
-		if ($callbackUrl != self::CALLBACK) {
+	protected function validateCallback($callback) {
+		if ($callback != self::CALLBACK) {
 			throw new Exceptions\InvalidCallbackException("Current implementation does not support OAuth callbacks");
 		}
 
