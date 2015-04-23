@@ -1,0 +1,32 @@
+{
+	"name"        : "henderjon/lti",
+	"type"        : "library",
+	"description" : "lti tools",
+	"homepage"    : "http://github.com/henderjon/lti",
+	"license"     : "BSD-3-Clause",
+	"authors"     : [
+		{
+			"name"     : "Jon Henderson",
+			"role"     : "Developer",
+			"homepage" : "http://github.com/henderjon"
+		}
+	],
+	"support" : {
+		"irc" : "irc://irc.freenode.org/henderjon"
+	},
+	"require": {
+		"php"     : ">=5.4",
+		"psr/log" : "~1.0"
+	},
+	"require-dev": {
+		"phpunit/phpunit" : "~4.6",
+		"henderjon/drop"  : "~1.0",
+		"henderjon/redis" : "~2.0",
+		"henderjon/weights_and_measures": "~3.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"Lti\\": "src/"
+		}
+	}
+}
