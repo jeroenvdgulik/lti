@@ -1,7 +1,7 @@
 # henderjon/lti
 
-[![Latest Stable Version](https://poser.pugx.org/henderjon/redis/v/stable.svg)](https://packagist.org/packages/henderjon/redis)
-[![Build Status](https://travis-ci.org/henderjon/redis.svg?branch=master)](https://travis-ci.org/henderjon/redis)
+[![Latest Stable Version](https://poser.pugx.org/henderjon/lti/v/stable.svg)](https://packagist.org/packages/henderjon/lti)
+[![Build Status](https://travis-ci.org/henderjon/lti.svg?branch=master)](https://travis-ci.org/henderjon/lti)
 
 
 
