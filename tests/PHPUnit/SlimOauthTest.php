@@ -237,6 +237,51 @@ class SlimOauthTest extends \PHPUnit_Framework_TestCase {
 
 	}
 
+	function test_create_and_verify_signature(){
+
+		$params = [
+			"oauth_nonce"            => "snarktastic",
+			"oauth_timestamp"        => 1429803093,
+			"oauth_consumer_key"     => "myonhasnokeys",
+			"oauth_signature_method" => "HMAC-SHA1",
+			"oauth_version"          => "1.0",
+			"oauth_callback"         => "about:blank",
+		];
+
+		$slimOauth = new \Lti\SlimOauth($this->endpoint, $this->getMockNonceMapper());
+		$slimOauth->setTimestampExpiration(0);
+
+		$sig = $slimOauth->createSignature($this->clientSecret, $params);
+		$params["oauth_signature"] = $sig;
+
+		$expected = $slimOauth->verifySignature($this->clientSecret, $params);
+
+		$this->assertTrue($expected);
+
+	}
+
+	function test_verifySignature_additional_params(){
+
+		$params = [
+			"oauth_nonce"            => "snarktastic",
+			"oauth_timestamp"        => 1429803093,
+			"oauth_consumer_key"     => "myonhasnokeys",
+			"oauth_signature_method" => "HMAC-SHA1",
+			"oauth_signature"        => "ABGzOAZn+iwLttoIrUBsJIGL46M=",
+			"oauth_version"          => "1.0",
+			"oauth_callback"         => "about:blank",
+			"bilbo_baggins"          => "lives in the shire",
+		];
+
+		$slimOauth = new \Lti\SlimOauth($this->endpoint, $this->getMockNonceMapper());
+		$slimOauth->setTimestampExpiration(0);
+
+		$expected = $slimOauth->verifySignature($this->clientSecret, $params);
+
+		$this->assertTrue($expected);
+
+	}
+
 	function test_verifySignature_false(){
 
 		$params = [
