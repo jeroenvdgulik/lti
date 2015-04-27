@@ -2,9 +2,6 @@
 
 require "vendor/autoload.php";
 
-$unmarshaler1 = new Lti\V1p1UnMarshaler1;
-$unmarshaler2 = new Lti\V1p1UnMarshaler2;
-
 $params = [
 		"oauth_nonce"                          => md5(microtime()),
 		"oauth_timestamp"                      => time(),
@@ -51,7 +48,7 @@ $params = [
 		"ext_pet_peeve"                        => "XML",
 ];
 
-$Obj1 = $unmarshaler1->unMarshal($params);
-$Obj2 = $unmarshaler2->unMarshal($params);
+$Obj1 = (new Lti\V1p1UnMarshaler1)->unMarshal($params);
+$Obj2 = (new Lti\V1p1UnMarshaler2)->unMarshal($params);
 
 drop($Obj1 == $Obj2);
