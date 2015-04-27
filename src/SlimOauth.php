@@ -19,13 +19,13 @@ class SlimOauth {
 	 */
 	protected $timestampExpiration = 3;
 
-	private $requiredKeys = array(
+	private $requiredKeys = [
 		"oauth_nonce",
 		"oauth_timestamp",
 		"oauth_consumer_key",
 		"oauth_signature_method",
-		"oauth_version"
-	);
+		"oauth_version",
+	];
 
 	/**
 	 * the general use case is tied to a specific request

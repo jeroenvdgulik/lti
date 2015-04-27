@@ -1,8 +1,8 @@
 <?php
 
-namespace Lti
+namespace Lti;
 
-class V1p1UnMarshaler {
+class V1p1UnMarshaler2 {
 
 	protected function makeNew(){
 		return new V1p1;
@@ -76,7 +76,7 @@ class V1p1UnMarshaler {
 		}
 
 		if(isset($params["context_type"])){
-			$Obj->setContextTyp($params["context_type"]);
+			$Obj->setContextType($params["context_type"]);
 		}
 
 		if(isset($params["context_title"])){
@@ -138,6 +138,46 @@ class V1p1UnMarshaler {
 		if(isset($params["tool_consumer_instance_contact_email"])){
 			$Obj->setToolConsumerInstanceContactEmail($params["tool_consumer_instance_contact_email"]);
 		}
+
+		if(isset($params["lis_result_sourcedid"])){
+			$Obj->setLisResultSourcedid($params["lis_result_sourcedid"]);
+		}
+
+		if(isset($params["lis_outcome_service_url"])){
+			$Obj->setLisOutcomeServiceUrl($params["lis_outcome_service_url"]);
+		}
+
+		if(isset($params["lis_person_sourcedid"])){
+			$Obj->setLisPersonSourcedid($params["lis_person_sourcedid"]);
+		}
+
+		if(isset($params["lis_course_offering_sourceded"])){
+			$Obj->setLisCourseOfferingSourceded($params["lis_course_offering_sourceded"]);
+		}
+
+		if(isset($params["lis_course_section_sourceded"])){
+			$Obj->setLisCourseSectionSourceded($params["lis_course_section_sourceded"]);
+		}
+
+		$custom = [];
+		foreach($params as $key => $value){
+			if(stripos($key, "custom_") === 0){
+				$custom[$key] = $value;
+			}
+		}
+
+		$Obj->setCustomParams($custom);
+
+		$ext = [];
+		foreach($params as $key => $value){
+			if(stripos($key, "ext_") === 0){
+				$ext[$key] = $value;
+			}
+		}
+
+		$Obj->setExtParams($ext);
+
+		return $Obj;
 
 	}
 

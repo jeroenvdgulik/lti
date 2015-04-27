@@ -1,16 +1,19 @@
 <?php
 
-namespace Lti
+require "vendor/autoload.php";
 
-class V1p1UnMarshaler {
+$unmarshaler1 = new Lti\V1p1UnMarshaler1;
+$unmarshaler2 = new Lti\V1p1UnMarshaler2;
 
-	protected $required = [
-		"lti_message_type" => "setLtiMessageType",
-		"lti_version"      => "setLtiVersion",
-		"resource_link_id" => "setResourceLinkId",
-	];
-
-	protected $optional = [
+$params = [
+		"oauth_nonce"                          => md5(microtime()),
+		"oauth_timestamp"                      => time(),
+		"oauth_consumer_key"                   => "BILBO_BAGGINS_WUZ_HERE",
+		"oauth_signature_method"               => "HMAC-SHA1",
+		"oauth_version"                        => "1.0",
+		"lti_message_type"                     => "setLtiMessageType",
+		"lti_version"                          => "setLtiVersion",
+		"resource_link_id"                     => "setResourceLinkId",
 		"resource_link_title"                  => "setResourceLinkTitle",
 		"resource_link_description"            => "setResourceLinkDescription",
 		"user_id"                              => "setUserId",
@@ -37,28 +40,18 @@ class V1p1UnMarshaler {
 		"tool_consumer_instance_description"   => "setToolConsumerInstanceDescription",
 		"tool_consumer_instance_url"           => "setToolConsumerInstanceUrl",
 		"tool_consumer_instance_contact_email" => "setToolConsumerInstanceContactEmail",
-	];
+		"lis_result_sourcedid"                 => "setLisResultSourcedid",
+		"lis_outcome_service_url"              => "setLisOutcomeServiceUrl",
+		"lis_person_sourcedid"                 => "setLisPersonSourcedid",
+		"lis_course_offering_sourceded"        => "setLisCourseOfferingSourceded",
+		"lis_course_section_sourceded"         => "setLisCourseSectionSourceded",
+		"custom_pet"                           => "dog",
+		"custom_petname"                       => "goose",
+		"ext_pet_color"                        => "ivory",
+		"ext_pet_peeve"                        => "XML",
+];
 
-	protected function makeNew(){
-		return new V1p1;
-	}
+$Obj1 = $unmarshaler1->unMarshal($params);
+$Obj2 = $unmarshaler2->unMarshal($params);
 
-	function unMarshal(array $params){
-		$Obj = $this->makeNew();
-
-		foreach($this->required as $property => $method){
-			if(!array_key_exists($property, $params) && !empty($params[$property])){
-				throw new MissingRequiredParamterException("LTI v 1.1 requires the paramter '{$property}'.");
-			}
-			$Obj->$method($param[$propery]);
-		}
-
-		foreach($this->optional as $property => $method){
-			if(array_key_exists($property, $params)){
-				$Obj->$method($param[$propery]);
-			}
-		}
-
-	}
-
-}
+drop($Obj1 == $Obj2);
