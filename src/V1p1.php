@@ -46,9 +46,8 @@ class V1p1 {
 
 	/**
 	 * get the lti_message_type
-	 * @param string $lti_message_type
 	 */
-	function getLtiMessageType($lti_message_type){
+	function getLtiMessageType(){
 		return $this->lti_message_type;
 	}
 
@@ -62,9 +61,8 @@ class V1p1 {
 
 	/**
 	 * get the lti_version
-	 * @param string $lti_version
 	 */
-	function getLtiVersion($lti_version){
+	function getLtiVersion(){
 		return $this->lti_version;
 	}
 
@@ -78,9 +76,8 @@ class V1p1 {
 
 	/**
 	 * get the resource_link_id
-	 * @param string $resource_link_id
 	 */
-	function getResourceLinkId($resource_link_id){
+	function getResourceLinkId(){
 		return $this->resource_link_id;
 	}
 
@@ -94,9 +91,8 @@ class V1p1 {
 
 	/**
 	 * get the resource_link_title
-	 * @param string $resource_link_title
 	 */
-	function getResourceLinkTitle($resource_link_title){
+	function getResourceLinkTitle(){
 		return $this->resource_link_title;
 	}
 
@@ -110,9 +106,8 @@ class V1p1 {
 
 	/**
 	 * get the resource_link_description
-	 * @param string $resource_link_description
 	 */
-	function getResourceLinkDescription($resource_link_description){
+	function getResourceLinkDescription(){
 		return $this->resource_link_description;
 	}
 
@@ -126,9 +121,8 @@ class V1p1 {
 
 	/**
 	 * get the user_id
-	 * @param string $user_id
 	 */
-	function getUserId($user_id){
+	function getUserId(){
 		return $this->user_id;
 	}
 
@@ -142,9 +136,8 @@ class V1p1 {
 
 	/**
 	 * get the user_image
-	 * @param string $user_image
 	 */
-	function getUserImage($user_image){
+	function getUserImage(){
 		return $this->user_image;
 	}
 
@@ -158,9 +151,8 @@ class V1p1 {
 
 	/**
 	 * get the roles
-	 * @param string $roles
 	 */
-	function getRoles($roles){
+	function getRoles(){
 		return $this->roles;
 	}
 
@@ -174,9 +166,8 @@ class V1p1 {
 
 	/**
 	 * get the lis_person_name_given
-	 * @param string $lis_person_name_given
 	 */
-	function getLisPersonNameGiven($lis_person_name_given){
+	function getLisPersonNameGiven(){
 		return $this->lis_person_name_given;
 	}
 
@@ -190,9 +181,8 @@ class V1p1 {
 
 	/**
 	 * get the lis_person_name_family
-	 * @param string $lis_person_name_family
 	 */
-	function getLisPersonNameFamily($lis_person_name_family){
+	function getLisPersonNameFamily(){
 		return $this->lis_person_name_family;
 	}
 
@@ -206,9 +196,8 @@ class V1p1 {
 
 	/**
 	 * get the lis_person_name_full
-	 * @param string $lis_person_name_full
 	 */
-	function getLisPersonNameFull($lis_person_name_full){
+	function getLisPersonNameFull(){
 		return $this->lis_person_name_full;
 	}
 
@@ -222,9 +211,8 @@ class V1p1 {
 
 	/**
 	 * get the lis_person_contact_email_primary
-	 * @param string $lis_person_contact_email_primary
 	 */
-	function getLisPersonContactEmailPrimary($lis_person_contact_email_primary){
+	function getLisPersonContactEmailPrimary(){
 		return $this->lis_person_contact_email_primary;
 	}
 
@@ -238,9 +226,8 @@ class V1p1 {
 
 	/**
 	 * get the context_id
-	 * @param string $context_id
 	 */
-	function getContextId($context_id){
+	function getContextId(){
 		return $this->context_id;
 	}
 
@@ -254,9 +241,8 @@ class V1p1 {
 
 	/**
 	 * get the context_type
-	 * @param string $context_type
 	 */
-	function getContextType($context_type){
+	function getContextType(){
 		return $this->context_type;
 	}
 
@@ -270,9 +256,8 @@ class V1p1 {
 
 	/**
 	 * get the context_title
-	 * @param string $context_title
 	 */
-	function getContextTitle($context_title){
+	function getContextTitle(){
 		return $this->context_title;
 	}
 
@@ -286,9 +271,8 @@ class V1p1 {
 
 	/**
 	 * get the context_label
-	 * @param string $context_label
 	 */
-	function getContextLabel($context_label){
+	function getContextLabel(){
 		return $this->context_label;
 	}
 
@@ -302,9 +286,8 @@ class V1p1 {
 
 	/**
 	 * get the launch_presentation_locale
-	 * @param string $launch_presentation_locale
 	 */
-	function getLaunchPresentationLocale($launch_presentation_locale){
+	function getLaunchPresentationLocale(){
 		return $this->launch_presentation_locale;
 	}
 
@@ -318,9 +301,8 @@ class V1p1 {
 
 	/**
 	 * get the launch_presentation_document_target
-	 * @param string $launch_presentation_document_target
 	 */
-	function getLaunchPresentationDocumentTarget($launch_presentation_document_target){
+	function getLaunchPresentationDocumentTarget(){
 		return $this->launch_presentation_document_target;
 	}
 
@@ -334,9 +316,8 @@ class V1p1 {
 
 	/**
 	 * get the launch_presentation_css_url
-	 * @param string $launch_presentation_css_url
 	 */
-	function getLaunchPresentationCssUrl($launch_presentation_css_url){
+	function getLaunchPresentationCssUrl(){
 		return $this->launch_presentation_css_url;
 	}
 
@@ -350,9 +331,8 @@ class V1p1 {
 
 	/**
 	 * get the launch_resentation_width
-	 * @param string $launch_resentation_width
 	 */
-	function getLaunchResentationWidth($launch_resentation_width){
+	function getLaunchResentationWidth(){
 		return $this->launch_resentation_width;
 	}
 
@@ -366,9 +346,8 @@ class V1p1 {
 
 	/**
 	 * get the launch_resentation_height
-	 * @param string $launch_resentation_height
 	 */
-	function getLaunchResentationHeight($launch_resentation_height){
+	function getLaunchResentationHeight(){
 		return $this->launch_resentation_height;
 	}
 
@@ -382,9 +361,8 @@ class V1p1 {
 
 	/**
 	 * get the launch_resentation_return_url
-	 * @param string $launch_resentation_return_url
 	 */
-	function getLaunchResentationReturnUrl($launch_resentation_return_url){
+	function getLaunchResentationReturnUrl(){
 		return $this->launch_resentation_return_url;
 	}
 
@@ -398,9 +376,8 @@ class V1p1 {
 
 	/**
 	 * get the tool_consumer_info_product_family
-	 * @param string $tool_consumer_info_product_family
 	 */
-	function getToolConsumerInfoProductFamily($tool_consumer_info_product_family){
+	function getToolConsumerInfoProductFamily(){
 		return $this->tool_consumer_info_product_family;
 	}
 
@@ -414,9 +391,8 @@ class V1p1 {
 
 	/**
 	 * get the tool_consumer_info_version
-	 * @param string $tool_consumer_info_version
 	 */
-	function getToolConsumerInfoVersion($tool_consumer_info_version){
+	function getToolConsumerInfoVersion(){
 		return $this->tool_consumer_info_version;
 	}
 
@@ -430,9 +406,8 @@ class V1p1 {
 
 	/**
 	 * get the tool_consumer_instance_guid
-	 * @param string $tool_consumer_instance_guid
 	 */
-	function getToolConsumerInstanceGuid($tool_consumer_instance_guid){
+	function getToolConsumerInstanceGuid(){
 		return $this->tool_consumer_instance_guid;
 	}
 
@@ -446,9 +421,8 @@ class V1p1 {
 
 	/**
 	 * get the tool_consumer_instance_name
-	 * @param string $tool_consumer_instance_name
 	 */
-	function getToolConsumerInstanceName($tool_consumer_instance_name){
+	function getToolConsumerInstanceName(){
 		return $this->tool_consumer_instance_name;
 	}
 
@@ -462,9 +436,8 @@ class V1p1 {
 
 	/**
 	 * get the tool_consumer_instance_description
-	 * @param string $tool_consumer_instance_description
 	 */
-	function getToolConsumerInstanceDescription($tool_consumer_instance_description){
+	function getToolConsumerInstanceDescription(){
 		return $this->tool_consumer_instance_description;
 	}
 
@@ -478,9 +451,8 @@ class V1p1 {
 
 	/**
 	 * get the tool_consumer_instance_url
-	 * @param string $tool_consumer_instance_url
 	 */
-	function getToolConsumerInstanceUrl($tool_consumer_instance_url){
+	function getToolConsumerInstanceUrl(){
 		return $this->tool_consumer_instance_url;
 	}
 
@@ -494,9 +466,8 @@ class V1p1 {
 
 	/**
 	 * get the tool_consumer_instance_contact_email
-	 * @param string $tool_consumer_instance_contact_email
 	 */
-	function getToolConsumerInstanceContactEmail($tool_consumer_instance_contact_email){
+	function getToolConsumerInstanceContactEmail(){
 		return $this->tool_consumer_instance_contact_email;
 	}
 
@@ -511,9 +482,8 @@ class V1p1 {
 
 	/**
 	 * get the lis_result_sourcedid
-	 * @param string $lis_result_sourcedid
 	 */
-	function getLisResultSourcedid($lis_result_sourcedid){
+	function getLisResultSourcedid(){
 		return $this->lis_result_sourcedid;
 	}
 
@@ -528,9 +498,8 @@ class V1p1 {
 
 	/**
 	 * get the lis_outcome_service_url
-	 * @param string $lis_outcome_service_url
 	 */
-	function getLisOutcomeServiceUrl($lis_outcome_service_url){
+	function getLisOutcomeServiceUrl(){
 		return $this->lis_outcome_service_url;
 	}
 
@@ -545,9 +514,8 @@ class V1p1 {
 
 	/**
 	 * get the lis_person_sourcedid
-	 * @param string $lis_person_sourcedid
 	 */
-	function getLisPersonSourcedid($lis_person_sourcedid){
+	function getLisPersonSourcedid(){
 		return $this->lis_person_sourcedid;
 	}
 
@@ -562,9 +530,8 @@ class V1p1 {
 
 	/**
 	 * get the lis_course_offering_sourceded
-	 * @param string $lis_course_offering_sourceded
 	 */
-	function getLisCourseOfferingSourceded($lis_course_offering_sourceded){
+	function getLisCourseOfferingSourceded(){
 		return $this->lis_course_offering_sourceded;
 	}
 
@@ -579,9 +546,8 @@ class V1p1 {
 
 	/**
 	 * get the lis_course_section_sourceded
-	 * @param string $lis_course_section_sourceded
 	 */
-	function getLisCourseSectionSourceded($lis_course_section_sourceded){
+	function getLisCourseSectionSourceded(){
 		return $this->lis_course_section_sourceded;
 	}
 
