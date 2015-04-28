@@ -104,16 +104,16 @@ class V1p1Director {
 			$this->builder->setLaunchPresentationCssUrl($params["launch_presentation_css_url"]);
 		}
 
-		if(isset($params["launch_resentation_width"])){
-			$this->builder->setLaunchResentationWidth($params["launch_resentation_width"]);
+		if(isset($params["launch_presentation_width"])){
+			$this->builder->setLaunchPresentationWidth($params["launch_presentation_width"]);
 		}
 
-		if(isset($params["launch_resentation_height"])){
-			$this->builder->setLaunchResentationHeight($params["launch_resentation_height"]);
+		if(isset($params["launch_presentation_height"])){
+			$this->builder->setLaunchPresentationHeight($params["launch_presentation_height"]);
 		}
 
-		if(isset($params["launch_resentation_return_url"])){
-			$this->builder->setLaunchResentationReturnUrl($params["launch_resentation_return_url"]);
+		if(isset($params["launch_presentation_return_url"])){
+			$this->builder->setLaunchPresentationReturnUrl($params["launch_presentation_return_url"]);
 		}
 
 		if(isset($params["tool_consumer_info_product_family"])){
@@ -156,12 +156,12 @@ class V1p1Director {
 			$this->builder->setLisPersonSourcedid($params["lis_person_sourcedid"]);
 		}
 
-		if(isset($params["lis_course_offering_sourceded"])){
-			$this->builder->setLisCourseOfferingSourceded($params["lis_course_offering_sourceded"]);
+		if(isset($params["lis_course_offering_sourcedid"])){
+			$this->builder->setLisCourseOfferingsourcedid($params["lis_course_offering_sourcedid"]);
 		}
 
-		if(isset($params["lis_course_section_sourceded"])){
-			$this->builder->setLisCourseSectionSourceded($params["lis_course_section_sourceded"]);
+		if(isset($params["lis_course_section_sourcedid"])){
+			$this->builder->setLisCourseSectionsourcedid($params["lis_course_section_sourcedid"]);
 		}
 
 		$custom = [];

@@ -27,9 +27,9 @@ class V1p1UnMarshaler1 {
 		"launch_presentation_locale"           => "setLaunchPresentationLocale",
 		"launch_presentation_document_target"  => "setLaunchPresentationDocumentTarget",
 		"launch_presentation_css_url"          => "setLaunchPresentationCssUrl",
-		"launch_resentation_width"             => "setLaunchResentationWidth",
-		"launch_resentation_height"            => "setLaunchResentationHeight",
-		"launch_resentation_return_url"        => "setLaunchResentationReturnUrl",
+		"launch_presentation_width"            => "setLaunchPresentationWidth",
+		"launch_presentation_height"           => "setLaunchPresentationHeight",
+		"launch_presentation_return_url"       => "setLaunchPresentationReturnUrl",
 		"tool_consumer_info_product_family"    => "setToolConsumerInfoProductFamily",
 		"tool_consumer_info_version"           => "setToolConsumerInfoVersion",
 		"tool_consumer_instance_guid"          => "setToolConsumerInstanceGuid",
@@ -40,8 +40,8 @@ class V1p1UnMarshaler1 {
 		"lis_result_sourcedid"                 => "setLisResultSourcedid",
 		"lis_outcome_service_url"              => "setLisOutcomeServiceUrl",
 		"lis_person_sourcedid"                 => "setLisPersonSourcedid",
-		"lis_course_offering_sourceded"        => "setLisCourseOfferingSourceded",
-		"lis_course_section_sourceded"         => "setLisCourseSectionSourceded",
+		"lis_course_offering_sourcedid"        => "setLisCourseOfferingsourcedid",
+		"lis_course_section_sourcedid"         => "setLisCourseSectionsourcedid",
 	];
 
 	protected function makeNew(){
