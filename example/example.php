@@ -51,4 +51,8 @@ $params = [
 $Obj1 = (new Lti\V1p1UnMarshaler1)->unMarshal($params);
 $Obj2 = (new Lti\V1p1UnMarshaler2)->unMarshal($params);
 
-drop($Obj1 == $Obj2);
+$director = new Lti\V1p1Director(new Lti\V1p1Builder);
+$director->buildLtiRequest($params);
+$Obj3 = $director->getLtiRequest();
+
+drop($Obj1 == $Obj3);
