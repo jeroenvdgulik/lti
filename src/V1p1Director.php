@@ -6,10 +6,6 @@ class V1p1Director {
 
 	protected $builder;
 
-	protected $params;
-
-	protected $inst;
-
 	public function __construct(V1p1BuilderInterface $builder){
 		$this->builder = $builder;
 	}
