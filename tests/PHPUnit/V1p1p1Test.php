@@ -4,39 +4,43 @@ class V1p1p1Test extends \PHPUnit_Framework_TestCase {
 
 	function getDefaultParams(){
 		return [
-			"lti_message_type"                     => "basic-lti-launch-reqeust",
-			"lti_version"                          => "LTI-1p0",
-			"resource_link_id"                     => "stories-from-the-mountain",
-			"resource_link_title"                  => "Stories from the Mountain",
-			"resource_link_description"            => "A Memoir",
-			"user_id"                              => 90053,
-			"user_image"                           => "http://www.gravatar.com/avatar/9321351ac36ea0cc38eb919003e8caa0.png",
-			"roles"                                => "Learner,Member",
-			"role_scope_mentor"                    => "90053,900054,90056",
-			"lis_person_name_given"                => "Bilbo",
-			"lis_person_name_family"               => "Baggins",
-			"lis_person_name_full"                 => "Bilbo Baggins of Underhill, Shire",
-			"lis_person_contact_email_primary"     => "bbaggins@shirenet.com",
-			"context_id"                           => "SFTM-Vol1",
-			"context_type"                         => "CourseSection",
-			"context_label"                        => "SFTM-Vol1",
-			"launch_presentation_locale"           => "en-US",
-			"launch_presentation_document_target"  => "iframe",
-			"launch_presentation_width"            => 500,
-			"context_title"                        => "An evaluation of the writings of the Shire.",
-			"launch_presentation_height"           => 500,
-			"launch_presentation_return_url"       => "https://shire.edu/schools/launch-portal/",
-			"tool_consumer_instance_guid"          => "shire.edu",
-			"tool_consumer_instance_name"          => "The Shire School for the Gifted",
-			"tool_consumer_instance_description"   => "A school for gifted students in the Shire",
-			"tool_consumer_instance_url"           => "https://shire.edu",
-			"tool_consumer_instance_contact_email" => "admin@shire.edu",
-			"lis_result_sourcedid"                 => 91827364128736491287346,
-			"lis_person_sourcedid"                 => 90053,
-			"lis_course_offering_sourcedid"        => "SFTM:1234",
-			"lis_course_section_sourcedid"         => "SFTM:1234-002",
-			"custom_additional_skills"             => "burglary",
-			"ext_special_equipment"                => "Dagger",
+			"lti_message_type"                       => "basic-lti-launch-reqeust",
+			"lti_version"                            => "LTI-1p0",
+			"resource_link_id"                       => "stories-from-the-mountain",
+			"resource_link_title"                    => "Stories from the Mountain",
+			"resource_link_description"              => "A Memoir",
+			"user_id"                                => 90053,
+			"user_image"                             => "http://www.gravatar.com/avatar/9321351ac36ea0cc38eb919003e8caa0.png",
+			"roles"                                  => "Learner,Member",
+			"role_scope_mentor"                      => "90053,900054,90056",
+			"lis_person_name_given"                  => "Bilbo",
+			"lis_person_name_family"                 => "Baggins",
+			"lis_person_name_full"                   => "Bilbo Baggins of Underhill, Shire",
+			"lis_person_contact_email_primary"       => "bbaggins@shirenet.com",
+			"context_id"                             => "SFTM-Vol1",
+			"context_type"                           => "CourseSection",
+			"context_label"                          => "SFTM-Vol1",
+			"launch_presentation_locale"             => "en-US",
+			"launch_presentation_document_target"    => "iframe",
+			"launch_presentation_width"              => 500,
+			"launch_presentation_css_url"            => "https://shire.edu/schools/launch-portal/styles.css",
+			"context_title"                          => "An evaluation of the writings of the Shire.",
+			"launch_presentation_height"             => 500,
+			"launch_presentation_return_url"         => "https://shire.edu/schools/launch-portal/",
+			"tool_consumer_info_product_family_code" => "PowerSchool",
+			"tool_consumer_info_version"             => "1.2.34",
+			"tool_consumer_instance_guid"            => "shire.edu",
+			"tool_consumer_instance_name"            => "The Shire School for the Gifted",
+			"tool_consumer_instance_description"     => "A school for gifted students in the Shire",
+			"tool_consumer_instance_url"             => "https://shire.edu",
+			"tool_consumer_instance_contact_email"   => "admin@shire.edu",
+			"lis_result_sourcedid"                   => 91827364128736491287346,
+			"lis_outcome_service_url"                => "https://shire.edu/schools/launch-portal/return.php",
+			"lis_person_sourcedid"                   => 90053,
+			"lis_course_offering_sourcedid"          => "SFTM:1234",
+			"lis_course_section_sourcedid"           => "SFTM:1234-002",
+			"custom_additional_skills"               => "burglary",
+			"ext_special_equipment"                  => "Dagger",
 		];
 	}
 
@@ -234,6 +238,13 @@ class V1p1p1Test extends \PHPUnit_Framework_TestCase {
 		$this->assertEquals($expected, $result);
 	}
 
+	function test_getLaunchPresentationCssUrl(){
+		$lti = $this->getBuiltLtiRequest();
+		$expected = "https://shire.edu/schools/launch-portal/styles.css";
+		$result = $lti->getLaunchPresentationCssUrl();
+		$this->assertEquals($expected, $result);
+	}
+
 	function test_getContextTitle(){
 		$lti = $this->getBuiltLtiRequest();
 		$expected = "An evaluation of the writings of the Shire.";
@@ -252,6 +263,20 @@ class V1p1p1Test extends \PHPUnit_Framework_TestCase {
 		$lti = $this->getBuiltLtiRequest();
 		$expected = "https://shire.edu/schools/launch-portal/";
 		$result = $lti->getLaunchPresentationReturnUrl();
+		$this->assertEquals($expected, $result);
+	}
+
+	function test_getToolConsumerInfoProductFamilyCode(){
+		$lti = $this->getBuiltLtiRequest();
+		$expected = "PowerSchool";
+		$result = $lti->getToolConsumerInfoProductFamilyCode();
+		$this->assertEquals($expected, $result);
+	}
+
+	function test_getToolConsumerInfoVersion(){
+		$lti = $this->getBuiltLtiRequest();
+		$expected = "1.2.34";
+		$result = $lti->getToolConsumerInfoVersion();
 		$this->assertEquals($expected, $result);
 	}
 
@@ -297,6 +322,13 @@ class V1p1p1Test extends \PHPUnit_Framework_TestCase {
 		$this->assertEquals($expected, $result);
 	}
 
+	function test_getLisOutcomeServiceUrl(){
+		$lti = $this->getBuiltLtiRequest();
+		$expected = "https://shire.edu/schools/launch-portal/return.php";
+		$result = $lti->getLisOutcomeServiceUrl();
+		$this->assertEquals($expected, $result);
+	}
+
 	function test_getLisPersonSourcedid(){
 		$lti = $this->getBuiltLtiRequest();
 		$expected = 90053;
@@ -325,6 +357,12 @@ class V1p1p1Test extends \PHPUnit_Framework_TestCase {
 		$this->assertEquals($expected, $result);
 	}
 
+	function test_getCustomParam_null(){
+		$lti = $this->getBuiltLtiRequest();
+		$result = $lti->getCustomParam("custom_key");
+		$this->assertEquals(null, $result);
+	}
+
 	function test_getAllCustomParams(){
 		$lti = $this->getBuiltLtiRequest();
 		$expected = ["custom_additional_skills" => "burglary"];
@@ -337,6 +375,12 @@ class V1p1p1Test extends \PHPUnit_Framework_TestCase {
 		$expected = "Dagger";
 		$result = $lti->getExtParam("ext_special_equipment");
 		$this->assertEquals($expected, $result);
+	}
+
+	function test_getExtParam_null(){
+		$lti = $this->getBuiltLtiRequest();
+		$result = $lti->getExtParam("ext_key");
+		$this->assertEquals(null, $result);
 	}
 
 	function test_getAllExtParams(){
@@ -374,5 +418,101 @@ class V1p1p1Test extends \PHPUnit_Framework_TestCase {
 		$this->assertEquals(null, $result);
 	}
 
+
+
+
+
+
+
+
+	function test_Director_coverage_v1p0(){
+		$builder = new \Lti\V1p0Builder;
+
+		$params = $this->getDefaultParams();
+
+		$builder->setLtiMessageType($params["lti_message_type"]);
+		$builder->setLtiVersion($params["lti_version"]);
+		$builder->setResourceLinkId($params["resource_link_id"]);
+		$builder->setResourceLinkTitle($params["resource_link_title"]);
+		$builder->setResourceLinkDescription($params["resource_link_description"]);
+		$builder->setUserId($params["user_id"]);
+		$builder->setUserImage($params["user_image"]);
+		$builder->setRoles($params["roles"]);
+		$builder->setToolConsumerInstanceGuid($params["tool_consumer_instance_guid"]);
+		$builder->setToolConsumerInstanceName($params["tool_consumer_instance_name"]);
+		$builder->setToolConsumerInstanceDescription($params["tool_consumer_instance_description"]);
+		$builder->setToolConsumerInstanceUrl($params["tool_consumer_instance_url"]);
+		$builder->setToolConsumerInstanceContactEmail($params["tool_consumer_instance_contact_email"]);
+		$builder->setLisPersonSourcedid($params["lis_person_sourcedid"]);
+		$builder->setLisCourseOfferingSourcedid($params["lis_course_offering_sourcedid"]);
+		$builder->setLisCourseSectionSourcedid($params["lis_course_section_sourcedid"]);
+		$builder->setLisResultSourcedid($params["lis_result_sourcedid"]);
+		$builder->setLisPersonNameGiven($params["lis_person_name_given"]);
+		$builder->setLisPersonNameFamily($params["lis_person_name_family"]);
+		$builder->setLisPersonNameFull($params["lis_person_name_full"]);
+		$builder->setLisPersonContactEmailPrimary($params["lis_person_contact_email_primary"]);
+		$builder->setContextId($params["context_id"]);
+		$builder->setContextType($params["context_type"]);
+		$builder->setContextTitle($params["context_title"]);
+		$builder->setContextLabel($params["context_label"]);
+		$builder->setLaunchPresentationLocale($params["launch_presentation_locale"]);
+		$builder->setLaunchPresentationDocumentTarget($params["launch_presentation_document_target"]);
+		$builder->setLaunchPresentationWidth($params["launch_presentation_width"]);
+		$builder->setLaunchPresentationHeight($params["launch_presentation_height"]);
+		$builder->setLaunchPresentationReturnUrl($params["launch_presentation_return_url"]);
+		$builder->setCustomParams(["one" => "one"]);
+		$builder->setExtParams(["two" => "two"]);
+
+		$inst = $builder->build();
+
+		$this->assertInstanceOf("\\Lti\\V1p0Interface", $inst);
+	}
+
+	function test_Director_coverage_v1p1(){
+		$builder = new \Lti\V1p1Builder;
+
+		$params = $this->getDefaultParams();
+
+		$builder->setLtiMessageType($params["lti_message_type"]);
+		$builder->setLtiVersion($params["lti_version"]);
+		$builder->setResourceLinkId($params["resource_link_id"]);
+		$builder->setResourceLinkTitle($params["resource_link_title"]);
+		$builder->setResourceLinkDescription($params["resource_link_description"]);
+		$builder->setUserId($params["user_id"]);
+		$builder->setUserImage($params["user_image"]);
+		$builder->setRoles($params["roles"]);
+		$builder->setToolConsumerInstanceGuid($params["tool_consumer_instance_guid"]);
+		$builder->setToolConsumerInstanceName($params["tool_consumer_instance_name"]);
+		$builder->setToolConsumerInstanceDescription($params["tool_consumer_instance_description"]);
+		$builder->setToolConsumerInstanceUrl($params["tool_consumer_instance_url"]);
+		$builder->setToolConsumerInstanceContactEmail($params["tool_consumer_instance_contact_email"]);
+		$builder->setLisPersonSourcedid($params["lis_person_sourcedid"]);
+		$builder->setLisCourseOfferingSourcedid($params["lis_course_offering_sourcedid"]);
+		$builder->setLisCourseSectionSourcedid($params["lis_course_section_sourcedid"]);
+		$builder->setLisResultSourcedid($params["lis_result_sourcedid"]);
+		$builder->setLisPersonNameGiven($params["lis_person_name_given"]);
+		$builder->setLisPersonNameFamily($params["lis_person_name_family"]);
+		$builder->setLisPersonNameFull($params["lis_person_name_full"]);
+		$builder->setLisPersonContactEmailPrimary($params["lis_person_contact_email_primary"]);
+		$builder->setContextId($params["context_id"]);
+		$builder->setContextType($params["context_type"]);
+		$builder->setContextTitle($params["context_title"]);
+		$builder->setContextLabel($params["context_label"]);
+		$builder->setLaunchPresentationLocale($params["launch_presentation_locale"]);
+		$builder->setLaunchPresentationDocumentTarget($params["launch_presentation_document_target"]);
+		$builder->setLaunchPresentationWidth($params["launch_presentation_width"]);
+		$builder->setLaunchPresentationHeight($params["launch_presentation_height"]);
+		$builder->setLaunchPresentationCssUrl($params["launch_presentation_css_url"]);
+		$builder->setLaunchPresentationReturnUrl($params["launch_presentation_return_url"]);
+		$builder->setToolConsumerInfoProductFamilyCode($params["tool_consumer_info_product_family_code"]);
+		$builder->setToolConsumerInfoVersion($params["tool_consumer_info_version"]);
+		$builder->setLisOutcomeServiceUrl($params["lis_outcome_service_url"]);
+		$builder->setCustomParams(["one" => "one"]);
+		$builder->setExtParams(["two" => "two"]);
+
+		$inst = $builder->build();
+
+		$this->assertInstanceOf("\\Lti\\V1p1Interface", $inst);
+	}
 
 }
