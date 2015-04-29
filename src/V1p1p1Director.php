@@ -40,133 +40,38 @@ class V1p1p1Director {
 		// RECOMMENDED or OPTIONAL
 		////////////////////////////////////////////////////////////////////////
 
-		if(isset($params["resource_link_title"])){
-			$this->builder->setResourceLinkTitle($params["resource_link_title"]);
-		}
-
-		if(isset($params["resource_link_description"])){
-			$this->builder->setResourceLinkDescription($params["resource_link_description"]);
-		}
-
-		if(isset($params["user_id"])){
-			$this->builder->setUserId($params["user_id"]);
-		}
-
-		if(isset($params["user_image"])){
-			$this->builder->setUserImage($params["user_image"]);
-		}
-
-		if(isset($params["roles"])){
-			$this->builder->setRoles($params["roles"]);
-		}
-
-		if(isset($params["role_scope_mentor"])){
-			$this->builder->setRoleScopeMentor($params["role_scope_mentor"]);
-		}
-
-		if(isset($params["lis_person_name_given"])){
-			$this->builder->setLisPersonNameGiven($params["lis_person_name_given"]);
-		}
-
-		if(isset($params["lis_person_name_family"])){
-			$this->builder->setLisPersonNameFamily($params["lis_person_name_family"]);
-		}
-
-		if(isset($params["lis_person_name_full"])){
-			$this->builder->setLisPersonNameFull($params["lis_person_name_full"]);
-		}
-
-		if(isset($params["lis_person_contact_email_primary"])){
-			$this->builder->setLisPersonContactEmailPrimary($params["lis_person_contact_email_primary"]);
-		}
-
-		if(isset($params["context_id"])){
-			$this->builder->setContextId($params["context_id"]);
-		}
-
-		if(isset($params["context_type"])){
-			$this->builder->setContextType($params["context_type"]);
-		}
-
-		if(isset($params["context_title"])){
-			$this->builder->setContextTitle($params["context_title"]);
-		}
-
-		if(isset($params["context_label"])){
-			$this->builder->setContextLabel($params["context_label"]);
-		}
-
-		if(isset($params["launch_presentation_locale"])){
-			$this->builder->setLaunchPresentationLocale($params["launch_presentation_locale"]);
-		}
-
-		if(isset($params["launch_presentation_document_target"])){
-			$this->builder->setLaunchPresentationDocumentTarget($params["launch_presentation_document_target"]);
-		}
-
-		if(isset($params["launch_presentation_css_url"])){
-			$this->builder->setLaunchPresentationCssUrl($params["launch_presentation_css_url"]);
-		}
-
-		if(isset($params["launch_presentation_width"])){
-			$this->builder->setLaunchPresentationWidth($params["launch_presentation_width"]);
-		}
-
-		if(isset($params["launch_presentation_height"])){
-			$this->builder->setLaunchPresentationHeight($params["launch_presentation_height"]);
-		}
-
-		if(isset($params["launch_presentation_return_url"])){
-			$this->builder->setLaunchPresentationReturnUrl($params["launch_presentation_return_url"]);
-		}
-
-		if(isset($params["tool_consumer_info_product_family_code"])){
-			$this->builder->setToolConsumerInfoProductFamilyCode($params["tool_consumer_info_product_family_code"]);
-		}
-
-		if(isset($params["tool_consumer_info_version"])){
-			$this->builder->setToolConsumerInfoVersion($params["tool_consumer_info_version"]);
-		}
-
-		if(isset($params["tool_consumer_instance_guid"])){
-			$this->builder->setToolConsumerInstanceGuid($params["tool_consumer_instance_guid"]);
-		}
-
-		if(isset($params["tool_consumer_instance_name"])){
-			$this->builder->setToolConsumerInstanceName($params["tool_consumer_instance_name"]);
-		}
-
-		if(isset($params["tool_consumer_instance_description"])){
-			$this->builder->setToolConsumerInstanceDescription($params["tool_consumer_instance_description"]);
-		}
-
-		if(isset($params["tool_consumer_instance_url"])){
-			$this->builder->setToolConsumerInstanceUrl($params["tool_consumer_instance_url"]);
-		}
-
-		if(isset($params["tool_consumer_instance_contact_email"])){
-			$this->builder->setToolConsumerInstanceContactEmail($params["tool_consumer_instance_contact_email"]);
-		}
-
-		if(isset($params["lis_result_sourcedid"])){
-			$this->builder->setLisResultSourcedid($params["lis_result_sourcedid"]);
-		}
-
-		if(isset($params["lis_outcome_service_url"])){
-			$this->builder->setLisOutcomeServiceUrl($params["lis_outcome_service_url"]);
-		}
-
-		if(isset($params["lis_person_sourcedid"])){
-			$this->builder->setLisPersonSourcedid($params["lis_person_sourcedid"]);
-		}
-
-		if(isset($params["lis_course_offering_sourcedid"])){
-			$this->builder->setLisCourseOfferingsourcedid($params["lis_course_offering_sourcedid"]);
-		}
-
-		if(isset($params["lis_course_section_sourcedid"])){
-			$this->builder->setLisCourseSectionsourcedid($params["lis_course_section_sourcedid"]);
-		}
+		$this->builder->setResourceLinkTitle(isset($params["resource_link_title"]) ? $params["resource_link_title"] : null);
+		$this->builder->setResourceLinkDescription(isset($params["resource_link_description"]) ? $params["resource_link_description"] : null);
+		$this->builder->setUserId(isset($params["user_id"]) ? $params["user_id"] : null);
+		$this->builder->setUserImage(isset($params["user_image"]) ? $params["user_image"] : null);
+		$this->builder->setRoles(isset($params["roles"]) ? $params["roles"] : null);
+		$this->builder->setRoleScopeMentor(isset($params["role_scope_mentor"]) ? $params["role_scope_mentor"] : null);
+		$this->builder->setLisPersonNameGiven(isset($params["lis_person_name_given"]) ? $params["lis_person_name_given"] : null);
+		$this->builder->setLisPersonNameFamily(isset($params["lis_person_name_family"]) ? $params["lis_person_name_family"] : null);
+		$this->builder->setLisPersonNameFull(isset($params["lis_person_name_full"]) ? $params["lis_person_name_full"] : null);
+		$this->builder->setLisPersonContactEmailPrimary(isset($params["lis_person_contact_email_primary"]) ? $params["lis_person_contact_email_primary"] : null);
+		$this->builder->setContextId(isset($params["context_id"]) ? $params["context_id"] : null);
+		$this->builder->setContextType(isset($params["context_type"]) ? $params["context_type"] : null);
+		$this->builder->setContextTitle(isset($params["context_title"]) ? $params["context_title"] : null);
+		$this->builder->setContextLabel(isset($params["context_label"]) ? $params["context_label"] : null);
+		$this->builder->setLaunchPresentationLocale(isset($params["launch_presentation_locale"]) ? $params["launch_presentation_locale"] : null);
+		$this->builder->setLaunchPresentationDocumentTarget(isset($params["launch_presentation_document_target"]) ? $params["launch_presentation_document_target"] : null);
+		$this->builder->setLaunchPresentationCssUrl(isset($params["launch_presentation_css_url"]) ? $params["launch_presentation_css_url"] : null);
+		$this->builder->setLaunchPresentationWidth(isset($params["launch_presentation_width"]) ? $params["launch_presentation_width"] : null);
+		$this->builder->setLaunchPresentationHeight(isset($params["launch_presentation_height"]) ? $params["launch_presentation_height"] : null);
+		$this->builder->setLaunchPresentationReturnUrl(isset($params["launch_presentation_return_url"]) ? $params["launch_presentation_return_url"] : null);
+		$this->builder->setToolConsumerInfoProductFamilyCode(isset($params["tool_consumer_info_product_family_code"]) ? $params["tool_consumer_info_product_family_code"] : null);
+		$this->builder->setToolConsumerInfoVersion(isset($params["tool_consumer_info_version"]) ? $params["tool_consumer_info_version"] : null);
+		$this->builder->setToolConsumerInstanceGuid(isset($params["tool_consumer_instance_guid"]) ? $params["tool_consumer_instance_guid"] : null);
+		$this->builder->setToolConsumerInstanceName(isset($params["tool_consumer_instance_name"]) ? $params["tool_consumer_instance_name"] : null);
+		$this->builder->setToolConsumerInstanceDescription(isset($params["tool_consumer_instance_description"]) ? $params["tool_consumer_instance_description"] : null);
+		$this->builder->setToolConsumerInstanceUrl(isset($params["tool_consumer_instance_url"]) ? $params["tool_consumer_instance_url"] : null);
+		$this->builder->setToolConsumerInstanceContactEmail(isset($params["tool_consumer_instance_contact_email"]) ? $params["tool_consumer_instance_contact_email"] : null);
+		$this->builder->setLisResultSourcedid(isset($params["lis_result_sourcedid"]) ? $params["lis_result_sourcedid"] : null);
+		$this->builder->setLisOutcomeServiceUrl(isset($params["lis_outcome_service_url"]) ? $params["lis_outcome_service_url"] : null);
+		$this->builder->setLisPersonSourcedid(isset($params["lis_person_sourcedid"]) ? $params["lis_person_sourcedid"] : null);
+		$this->builder->setLisCourseOfferingsourcedid(isset($params["lis_course_offering_sourcedid"]) ? $params["lis_course_offering_sourcedid"] : null);
+		$this->builder->setLisCourseSectionsourcedid(isset($params["lis_course_section_sourcedid"]) ? $params["lis_course_section_sourcedid"] : null);
 
 		$custom = [];
 		foreach($params as $key => $value){
