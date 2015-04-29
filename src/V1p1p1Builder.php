@@ -4,10 +4,11 @@ namespace Lti;
 
 class V1p1p1Builder extends V1p1Builder implements V1p1p1BuilderInterface {
 
+	/**
+	 * `lti_message_type`, `lti_version`, `resource_link_id` are excluded
+	 * becasue they are required and should not have a default value
+	 */
 	protected $inst = [
-		// "lti_message_type"                       => null,
-		// "lti_version"                            => null,
-		// "resource_link_id"                       => null,
 		"resource_link_title"                    => null,
 		"resource_link_description"              => null,
 		"user_id"                                => null,

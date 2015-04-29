@@ -10,11 +10,11 @@ class V1p1p1Director {
 		$this->builder = $builder;
 	}
 
-	function getLtiRequest(){
+	public function getLtiRequest(){
 		return $this->builder->build();
 	}
 
-	function buildLtiRequest(array $params){
+	public function buildLtiRequest(array $params){
 
 		// REQUIRED
 		////////////////////////////////////////////////////////////////////////

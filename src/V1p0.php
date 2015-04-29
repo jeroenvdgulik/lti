@@ -281,7 +281,7 @@ class V1p0 implements V1p0Interface {
 		return $this->ext;
 	}
 
-	function __construct(
+	public function __construct(
 		$lti_message_type,
 		$lti_version,
 		$resource_link_id,

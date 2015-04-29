@@ -4,10 +4,11 @@ namespace Lti;
 
 class V1p0Builder implements V1p0BuilderInterface {
 
+	/**
+	 * `lti_message_type`, `lti_version`, `resource_link_id` are excluded
+	 * becasue they are required and should not have a default value
+	 */
 	protected $inst = [
-		// "lti_message_type,"                     => null,
-		// "lti_version,"                          => null,
-		// "resource_link_id,"                     => null,
 		"resource_link_title,"                  => null,
 		"resource_link_description,"            => null,
 		"user_id,"                              => null,
@@ -320,7 +321,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 
 	/**
 	 * set custom params
-	 * @param array $param An array of custom_key => value pair
+	 * @param array $params An array of custom_key => value pair
 	 */
 	public function setCustomParams(array $params){
 		foreach($params as $key => $value){
@@ -333,7 +334,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 
 	/**
 	 * set ext params
-	 * @param array $param An array of ext_key => value pair
+	 * @param array $params An array of ext_key => value pair
 	 */
 	public function setExtParams(array $params){
 		foreach($params as $key => $value){

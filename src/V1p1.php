@@ -37,7 +37,7 @@ class V1p1 extends V1p0 implements V1p1Interface {
 		return $this->lis_outcome_service_url;
 	}
 
-	function __construct(
+	public function __construct(
 		$lti_message_type,
 		$lti_version,
 		$resource_link_id,
