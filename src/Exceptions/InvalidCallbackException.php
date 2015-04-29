@@ -2,4 +2,4 @@
 
 namespace Lti\Exceptions;
 
-class InvalidCallbackException extends \Exception{}
+class InvalidCallbackException extends LtiException{}

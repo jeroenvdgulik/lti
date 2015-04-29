@@ -269,7 +269,7 @@ class V1p0 implements V1p0Interface {
 	 * @param string $key The key to get
 	 */
 	public function getExtParam($key){
-		if(isset($this->custom[$key])){
+		if(isset($this->ext[$key])){
 			return $this->ext[$key];
 		}
 	}
@@ -282,20 +282,39 @@ class V1p0 implements V1p0Interface {
 	}
 
 	function __construct(
-		$lti_message_type, $lti_version, $resource_link_id,
-		$resource_link_title, $resource_link_description, $user_id,
-		$user_image, $roles, $lis_person_name_given, $lis_person_name_family,
-		$lis_person_name_full, $lis_person_contact_email_primary, $context_id,
-		$context_type, $context_title, $context_label,
-		$launch_presentation_locale, $launch_presentation_document_target,
-		$launch_presentation_width, $launch_presentation_height,
-		$launch_presentation_return_url, $tool_consumer_instance_guid,
-		$tool_consumer_instance_name, $tool_consumer_instance_description,
-		$tool_consumer_instance_url, $tool_consumer_instance_contact_email,
-		$lis_result_sourcedid, $lis_person_sourcedid,
-		$lis_course_offering_sourcedid, $lis_course_section_sourcedid,
-		array $custom_, array $ext_)
-	{
+		$lti_message_type,
+		$lti_version,
+		$resource_link_id,
+		$resource_link_title,
+		$resource_link_description,
+		$user_id,
+		$user_image,
+		$roles,
+		$tool_consumer_instance_guid,
+		$tool_consumer_instance_name,
+		$tool_consumer_instance_description,
+		$tool_consumer_instance_url,
+		$tool_consumer_instance_contact_email,
+		$lis_person_sourcedid,
+		$lis_course_offering_sourcedid,
+		$lis_course_section_sourcedid,
+		$lis_result_sourcedid,
+		$lis_person_name_given,
+		$lis_person_name_family,
+		$lis_person_name_full,
+		$lis_person_contact_email_primary,
+		$context_id,
+		$context_type,
+		$context_title,
+		$context_label,
+		$launch_presentation_locale,
+		$launch_presentation_document_target,
+		$launch_presentation_width,
+		$launch_presentation_height,
+		$launch_presentation_return_url,
+		array $custom_,
+		array $ext_
+	){
 		$this->lti_message_type                     = $lti_message_type;
 		$this->lti_version                          = $lti_version;
 		$this->resource_link_id                     = $resource_link_id;
@@ -304,6 +323,15 @@ class V1p0 implements V1p0Interface {
 		$this->user_id                              = $user_id;
 		$this->user_image                           = $user_image;
 		$this->roles                                = $roles;
+		$this->tool_consumer_instance_guid          = $tool_consumer_instance_guid;
+		$this->tool_consumer_instance_name          = $tool_consumer_instance_name;
+		$this->tool_consumer_instance_description   = $tool_consumer_instance_description;
+		$this->tool_consumer_instance_url           = $tool_consumer_instance_url;
+		$this->tool_consumer_instance_contact_email = $tool_consumer_instance_contact_email;
+		$this->lis_person_sourcedid                 = $lis_person_sourcedid;
+		$this->lis_course_offering_sourcedid        = $lis_course_offering_sourcedid;
+		$this->lis_course_section_sourcedid         = $lis_course_section_sourcedid;
+		$this->lis_result_sourcedid                 = $lis_result_sourcedid;
 		$this->lis_person_name_given                = $lis_person_name_given;
 		$this->lis_person_name_family               = $lis_person_name_family;
 		$this->lis_person_name_full                 = $lis_person_name_full;
@@ -317,15 +345,6 @@ class V1p0 implements V1p0Interface {
 		$this->launch_presentation_width            = $launch_presentation_width;
 		$this->launch_presentation_height           = $launch_presentation_height;
 		$this->launch_presentation_return_url       = $launch_presentation_return_url;
-		$this->tool_consumer_instance_guid          = $tool_consumer_instance_guid;
-		$this->tool_consumer_instance_name          = $tool_consumer_instance_name;
-		$this->tool_consumer_instance_description   = $tool_consumer_instance_description;
-		$this->tool_consumer_instance_url           = $tool_consumer_instance_url;
-		$this->tool_consumer_instance_contact_email = $tool_consumer_instance_contact_email;
-		$this->lis_result_sourcedid                 = $lis_result_sourcedid;
-		$this->lis_person_sourcedid                 = $lis_person_sourcedid;
-		$this->lis_course_offering_sourcedid        = $lis_course_offering_sourcedid;
-		$this->lis_course_section_sourcedid         = $lis_course_section_sourcedid;
 		$this->custom                               = $custom_;
 		$this->ext                                  = $ext_;
 	}

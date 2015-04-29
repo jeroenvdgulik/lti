@@ -2,39 +2,15 @@
 
 namespace Lti;
 
-class V1p1 extends V1p0 implements V1p1Interface {
+class V1p1p1 extends V1p1 implements V1p1p1Interface {
 
-	protected $launch_presentation_css_url;
-	protected $tool_consumer_info_product_family_code;
-	protected $tool_consumer_info_version;
-	protected $lis_outcome_service_url;
+	protected $role_scope_mentor;
 
 	/**
-	 * get the launch_presentation_css_url
+	 * get the role_scope_mentor
 	 */
-	public function getLaunchPresentationCssUrl(){
-		return $this->launch_presentation_css_url;
-	}
-
-	/**
-	 * get the tool_consumer_info_product_family_code
-	 */
-	public function getToolConsumerInfoProductFamilyCode(){
-		return $this->tool_consumer_info_product_family_code;
-	}
-
-	/**
-	 * get the tool_consumer_info_version
-	 */
-	public function getToolConsumerInfoVersion(){
-		return $this->tool_consumer_info_version;
-	}
-
-	/**
-	 * get the lis_outcome_service_url
-	 */
-	public function getLisOutcomeServiceUrl(){
-		return $this->lis_outcome_service_url;
+	public function getRoleScopeMentor(){
+		return $this->role_scope_mentor;
 	}
 
 	function __construct(
@@ -46,6 +22,7 @@ class V1p1 extends V1p0 implements V1p1Interface {
 		$user_id,
 		$user_image,
 		$roles,
+		$role_scope_mentor,
 		$lis_person_name_given,
 		$lis_person_name_family,
 		$lis_person_name_full,
@@ -83,6 +60,7 @@ class V1p1 extends V1p0 implements V1p1Interface {
 		$this->user_id                              = $user_id;
 		$this->user_image                           = $user_image;
 		$this->roles                                = $roles;
+		$this->role_scope_mentor                    = $role_scope_mentor;
 		$this->lis_person_name_given                = $lis_person_name_given;
 		$this->lis_person_name_family               = $lis_person_name_family;
 		$this->lis_person_name_full                 = $lis_person_name_full;

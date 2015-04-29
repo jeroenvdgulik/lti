@@ -2,7 +2,7 @@
 
 namespace Lti;
 
-interface V1p1Interface {
+interface V1p1Interface extends V1p0Interface {
 
 	/**
 	 * get the launch_presentation_css_url
@@ -10,9 +10,9 @@ interface V1p1Interface {
 	public function getLaunchPresentationCssUrl();
 
 	/**
-	 * get the tool_consumer_info_product_family
+	 * get the tool_consumer_info_product_family_code
 	 */
-	public function getToolConsumerInfoProductFamily();
+	public function getToolConsumerInfoProductFamilyCode();
 
 	/**
 	 * get the tool_consumer_info_version

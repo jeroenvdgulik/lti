@@ -2,7 +2,7 @@
 
 namespace Lti;
 
-class V1p1Builder extends V1p0Builder implements V1p1BuilderInterface {
+class V1p1p1Builder extends V1p1Builder implements V1p1p1BuilderInterface {
 
 	protected $inst = [
 		// "lti_message_type"                       => null,
@@ -13,6 +13,7 @@ class V1p1Builder extends V1p0Builder implements V1p1BuilderInterface {
 		"user_id"                                => null,
 		"user_image"                             => null,
 		"roles"                                  => null,
+		"role_scope_mentor"                      => null,
 		"lis_person_name_given"                  => null,
 		"lis_person_name_family"                 => null,
 		"lis_person_name_full"                   => null,
@@ -42,7 +43,7 @@ class V1p1Builder extends V1p0Builder implements V1p1BuilderInterface {
 	];
 
 	public function build(){
-		return new V1p1(
+		return new V1p1p1(
 			$this->inst["lti_message_type"],
 			$this->inst["lti_version"],
 			$this->inst["resource_link_id"],
@@ -51,6 +52,7 @@ class V1p1Builder extends V1p0Builder implements V1p1BuilderInterface {
 			$this->inst["user_id"],
 			$this->inst["user_image"],
 			$this->inst["roles"],
+			$this->inst["role_scope_mentor"],
 			$this->inst["lis_person_name_given"],
 			$this->inst["lis_person_name_family"],
 			$this->inst["lis_person_name_full"],
@@ -86,32 +88,8 @@ class V1p1Builder extends V1p0Builder implements V1p1BuilderInterface {
 	 * set the launch_presentation_css_url
 	 * @param string $launch_presentation_css_url
 	 */
-	public function setLaunchPresentationCssUrl($launch_presentation_css_url){
-		$this->inst["launch_presentation_css_url"] = $launch_presentation_css_url;
-	}
-
-	/**
-	 * set the tool_consumer_info_product_family_code
-	 * @param string $tool_consumer_info_product_family_code
-	 */
-	public function setToolConsumerInfoProductFamilyCode($tool_consumer_info_product_family_code){
-		$this->inst["tool_consumer_info_product_family_code"] = $tool_consumer_info_product_family_code;
-	}
-
-	/**
-	 * set the tool_consumer_info_version
-	 * @param string $tool_consumer_info_version
-	 */
-	public function setToolConsumerInfoVersion($tool_consumer_info_version){
-		$this->inst["tool_consumer_info_version"] = $tool_consumer_info_version;
-	}
-
-	/**
-	 * set the lis_outcome_service_url
-	 * @param string $lis_outcome_service_url
-	 */
-	public function setLisOutcomeServiceUrl($lis_outcome_service_url){
-		$this->inst["lis_outcome_service_url"] = $lis_outcome_service_url;
+	public function setRoleScopeMentor($role_scope_mentor){
+		$this->inst["role_scope_mentor"] = $role_scope_mentor;
 	}
 
 }

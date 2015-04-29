@@ -4,42 +4,77 @@ namespace Lti;
 
 class V1p0Builder implements V1p0BuilderInterface {
 
-	protected $inst = [];
+	protected $inst = [
+		// "lti_message_type,"                     => null,
+		// "lti_version,"                          => null,
+		// "resource_link_id,"                     => null,
+		"resource_link_title,"                  => null,
+		"resource_link_description,"            => null,
+		"user_id,"                              => null,
+		"user_image,"                           => null,
+		"roles,"                                => null,
+		"tool_consumer_instance_guid,"          => null,
+		"tool_consumer_instance_name,"          => null,
+		"tool_consumer_instance_description,"   => null,
+		"tool_consumer_instance_url,"           => null,
+		"tool_consumer_instance_contact_email," => null,
+		"lis_person_sourcedid,"                 => null,
+		"lis_course_offering_sourcedid,"        => null,
+		"lis_course_section_sourcedid,"         => null,
+		"lis_result_sourcedid,"                 => null,
+		"lis_person_name_given,"                => null,
+		"lis_person_name_family,"               => null,
+		"lis_person_name_full,"                 => null,
+		"lis_person_contact_email_primary,"     => null,
+		"context_id,"                           => null,
+		"context_type,"                         => null,
+		"context_title,"                        => null,
+		"context_label,"                        => null,
+		"launch_presentation_locale,"           => null,
+		"launch_presentation_document_target,"  => null,
+		"launch_presentation_width,"            => null,
+		"launch_presentation_height,"           => null,
+		"launch_presentation_return_url,"       => null,
+	];
+
+	protected $custom = [];
+
+	protected $ext    = [];
 
 	public function build(){
 		return new V1p0(
-			$this->inst["lti_message_type"],
-			$this->inst["lti_version"],
-			$this->inst["resource_link_id"],
-			$this->inst["resource_link_title"],
-			$this->inst["resource_link_description"],
-			$this->inst["user_id"],
-			$this->inst["user_image"],
-			$this->inst["roles"],
-			$this->inst["lis_person_name_given"],
-			$this->inst["lis_person_name_family"],
-			$this->inst["lis_person_name_full"],
-			$this->inst["lis_person_contact_email_primary"],
-			$this->inst["context_id"],
-			$this->inst["context_type"],
-			$this->inst["context_title"],
-			$this->inst["context_label"],
-			$this->inst["launch_presentation_locale"],
-			$this->inst["launch_presentation_document_target"],
-			$this->inst["launch_presentation_width"],
-			$this->inst["launch_presentation_height"],
-			$this->inst["launch_presentation_return_url"],
-			$this->inst["tool_consumer_instance_guid"],
-			$this->inst["tool_consumer_instance_name"],
-			$this->inst["tool_consumer_instance_description"],
-			$this->inst["tool_consumer_instance_url"],
-			$this->inst["tool_consumer_instance_contact_email"],
-			$this->inst["lis_result_sourcedid"],
-			$this->inst["lis_person_sourcedid"],
-			$this->inst["lis_course_offering_sourcedid"],
-			$this->inst["lis_course_section_sourcedid"],
-			$this->inst["custom_"],
-			$this->inst["ext_"]
+			$this->inst["lti_message_type,"],
+			$this->inst["lti_version,"],
+			$this->inst["resource_link_id,"],
+			$this->inst["resource_link_title,"],
+			$this->inst["resource_link_description,"],
+			$this->inst["user_id,"],
+			$this->inst["user_image,"],
+			$this->inst["roles,"],
+			$this->inst["tool_consumer_instance_guid,"],
+			$this->inst["tool_consumer_instance_name,"],
+			$this->inst["tool_consumer_instance_description,"],
+			$this->inst["tool_consumer_instance_url,"],
+			$this->inst["tool_consumer_instance_contact_email,"],
+			$this->inst["lis_person_sourcedid,"],
+			$this->inst["lis_course_offering_sourcedid,"],
+			$this->inst["lis_course_section_sourcedid,"],
+			$this->inst["lis_result_sourcedid,"],
+			$this->inst["lis_person_name_given,"],
+			$this->inst["lis_person_name_family,"],
+			$this->inst["lis_person_name_full,"],
+			$this->inst["lis_person_contact_email_primary,"],
+			$this->inst["context_id,"],
+			$this->inst["context_type,"],
+			$this->inst["context_title,"],
+			$this->inst["context_label,"],
+			$this->inst["launch_presentation_locale,"],
+			$this->inst["launch_presentation_document_target,"],
+			$this->inst["launch_presentation_width,"],
+			$this->inst["launch_presentation_height,"],
+			$this->inst["launch_presentation_return_url,"],
+			$this->custom,
+			$this->ext
 		);
 	}
 
@@ -291,20 +326,20 @@ class V1p0Builder implements V1p0BuilderInterface {
 		foreach($params as $key => $value){
 			$key = strtolower($key);
 			if(strpos($key, "custom_") === 0){
-				$this->inst["custom_"][$key] = $value;
+				$this->custom[$key] = $value;
 			}
 		}
 	}
 
 	/**
-	 * $custom;
+	 * set ext params
 	 * @param array $param An array of ext_key => value pair
 	 */
 	public function setExtParams(array $params){
 		foreach($params as $key => $value){
 			$key = strtolower($key);
 			if(strpos($key, "ext_") === 0){
-				$this->inst["ext_"][$key] = $value;
+				$this->ext[$key] = $value;
 			}
 		}
 	}

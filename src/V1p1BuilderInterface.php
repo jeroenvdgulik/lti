@@ -11,10 +11,10 @@ interface V1p1BuilderInterface extends V1p0BuilderInterface {
 	function setLaunchPresentationCssUrl($launch_presentation_css_url);
 
 	/**
-	 * set the tool_consumer_info_product_family
-	 * @param string $tool_consumer_info_product_family
+	 * set the tool_consumer_info_product_family_code
+	 * @param string $tool_consumer_info_product_family_code
 	 */
-	function setToolConsumerInfoProductFamily($tool_consumer_info_product_family);
+	function setToolConsumerInfoProductFamilyCode($tool_consumer_info_product_family_code);
 
 	/**
 	 * set the tool_consumer_info_version

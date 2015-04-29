@@ -2,11 +2,11 @@
 
 namespace Lti;
 
-class V1p1Director {
+class V1p1p1Director {
 
 	protected $builder;
 
-	public function __construct(V1p1BuilderInterface $builder){
+	public function __construct(V1p1p1Builder $builder){
 		$this->builder = $builder;
 	}
 
@@ -22,19 +22,19 @@ class V1p1Director {
 		if(isset($params["lti_message_type"])){
 			$this->builder->setLtiMessageType($params["lti_message_type"]);
 		}else{
-			throw new MissingRequiredParamterException("LTI v 1.1 requires the paramter 'lti_message_type'.");
+			throw new Exceptions\MissingRequiredParameterException("LTI v 1.1 requires the paramter 'lti_message_type'.");
 		}
 
 		if(isset($params["lti_version"])){
 			$this->builder->setLtiVersion($params["lti_version"]);
 		}else{
-			throw new MissingRequiredParamterException("LTI v 1.1 requires the paramter 'lti_version'.");
+			throw new Exceptions\MissingRequiredParameterException("LTI v 1.1 requires the paramter 'lti_version'.");
 		}
 
 		if(isset($params["resource_link_id"])){
 			$this->builder->setResourceLinkId($params["resource_link_id"]);
 		}else{
-			throw new MissingRequiredParamterException("LTI v 1.1 requires the paramter 'resource_link_id'.");
+			throw new Exceptions\MissingRequiredParameterException("LTI v 1.1 requires the paramter 'resource_link_id'.");
 		}
 
 		// RECOMMENDED or OPTIONAL
@@ -58,6 +58,10 @@ class V1p1Director {
 
 		if(isset($params["roles"])){
 			$this->builder->setRoles($params["roles"]);
+		}
+
+		if(isset($params["role_scope_mentor"])){
+			$this->builder->setRoleScopeMentor($params["role_scope_mentor"]);
 		}
 
 		if(isset($params["lis_person_name_given"])){
@@ -116,8 +120,8 @@ class V1p1Director {
 			$this->builder->setLaunchPresentationReturnUrl($params["launch_presentation_return_url"]);
 		}
 
-		if(isset($params["tool_consumer_info_product_family"])){
-			$this->builder->setToolConsumerInfoProductFamily($params["tool_consumer_info_product_family"]);
+		if(isset($params["tool_consumer_info_product_family_code"])){
+			$this->builder->setToolConsumerInfoProductFamilyCode($params["tool_consumer_info_product_family_code"]);
 		}
 
 		if(isset($params["tool_consumer_info_version"])){
