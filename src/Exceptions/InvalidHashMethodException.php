@@ -2,4 +2,4 @@
 
 namespace Lti\Exceptions;
 
-class InvalidHashMethodException extends \Exception{}
+class InvalidHashMethodException extends LtiException{}

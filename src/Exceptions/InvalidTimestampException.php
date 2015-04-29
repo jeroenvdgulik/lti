@@ -2,4 +2,4 @@
 
 namespace Lti\Exceptions;
 
-class InvalidTimestampException extends \Exception{}
+class InvalidTimestampException extends LtiException{}
