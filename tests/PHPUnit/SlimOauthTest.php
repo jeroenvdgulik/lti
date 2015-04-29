@@ -8,7 +8,7 @@ class SlimOauthTest extends \PHPUnit_Framework_TestCase {
 
 	function getMockNonceMapper($nonce = null){
 		// Create a stub for the SomeClass class.
-		$stub = $this->getMockBuilder('Lti\\NonceMapper')
+		$stub = $this->getMockBuilder('Lti\\NonceMapperInterface')
 					 ->disableOriginalConstructor()
 					 ->getMock();
 
