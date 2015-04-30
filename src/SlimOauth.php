@@ -19,6 +19,9 @@ class SlimOauth {
 	 */
 	protected $timestampExpiration = 3;
 
+	/**
+	 * additional params `oauth_body_hash` and `oauth_callback`
+	 */
 	private $requiredKeys = [
 		"oauth_nonce",
 		"oauth_timestamp",
