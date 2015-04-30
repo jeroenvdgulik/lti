@@ -4,38 +4,71 @@ namespace Lti;
 
 class V1p0Builder implements V1p0BuilderInterface {
 
+	const LTI_MESSAGE_TYPE                     = "lti_message_type";
+	const LTI_VERSION                          = "lti_version";
+	const RESOURCE_LINK_ID                     = "resource_link_id";
+	const RESOURCE_LINK_TITLE                  = "resource_link_title";
+	const RESOURCE_LINK_DESCRIPTION            = "resource_link_description";
+	const USER_ID                              = "user_id";
+	const USER_IMAGE                           = "user_image";
+	const ROLES                                = "roles";
+	const TOOL_CONSUMER_INSTANCE_GUID          = "tool_consumer_instance_guid";
+	const TOOL_CONSUMER_INSTANCE_NAME          = "tool_consumer_instance_name";
+	const TOOL_CONSUMER_INSTANCE_DESCRIPTION   = "tool_consumer_instance_description";
+	const TOOL_CONSUMER_INSTANCE_URL           = "tool_consumer_instance_url";
+	const TOOL_CONSUMER_INSTANCE_CONTACT_EMAIL = "tool_consumer_instance_contact_email";
+	const LIS_PERSON_SOURCEDID                 = "lis_person_sourcedid";
+	const LIS_COURSE_OFFERING_SOURCEDID        = "lis_course_offering_sourcedid";
+	const LIS_COURSE_SECTION_SOURCEDID         = "lis_course_section_sourcedid";
+	const LIS_RESULT_SOURCEDID                 = "lis_result_sourcedid";
+	const LIS_PERSON_NAME_GIVEN                = "lis_person_name_given";
+	const LIS_PERSON_NAME_FAMILY               = "lis_person_name_family";
+	const LIS_PERSON_NAME_FULL                 = "lis_person_name_full";
+	const LIS_PERSON_CONTACT_EMAIL_PRIMARY     = "lis_person_contact_email_primary";
+	const CONTEXT_ID                           = "context_id";
+	const CONTEXT_TYPE                         = "context_type";
+	const CONTEXT_TITLE                        = "context_title";
+	const CONTEXT_LABEL                        = "context_label";
+	const LAUNCH_PRESENTATION_LOCALE           = "launch_presentation_locale";
+	const LAUNCH_PRESENTATION_DOCUMENT_TARGET  = "launch_presentation_document_target";
+	const LAUNCH_PRESENTATION_WIDTH            = "launch_presentation_width";
+	const LAUNCH_PRESENTATION_HEIGHT           = "launch_presentation_height";
+	const LAUNCH_PRESENTATION_RETURN_URL       = "launch_presentation_return_url";
+	const PREFIX_CUSTOM                        = "custom_";
+	const PREFIX_EXT                           = "ext_";
+
 	/**
 	 * `lti_message_type`, `lti_version`, `resource_link_id` are excluded
 	 * becasue they are required and should not have a default value
 	 */
 	protected $inst = [
-		"resource_link_title,"                  => null,
-		"resource_link_description,"            => null,
-		"user_id,"                              => null,
-		"user_image,"                           => null,
-		"roles,"                                => null,
-		"tool_consumer_instance_guid,"          => null,
-		"tool_consumer_instance_name,"          => null,
-		"tool_consumer_instance_description,"   => null,
-		"tool_consumer_instance_url,"           => null,
-		"tool_consumer_instance_contact_email," => null,
-		"lis_person_sourcedid,"                 => null,
-		"lis_course_offering_sourcedid,"        => null,
-		"lis_course_section_sourcedid,"         => null,
-		"lis_result_sourcedid,"                 => null,
-		"lis_person_name_given,"                => null,
-		"lis_person_name_family,"               => null,
-		"lis_person_name_full,"                 => null,
-		"lis_person_contact_email_primary,"     => null,
-		"context_id,"                           => null,
-		"context_type,"                         => null,
-		"context_title,"                        => null,
-		"context_label,"                        => null,
-		"launch_presentation_locale,"           => null,
-		"launch_presentation_document_target,"  => null,
-		"launch_presentation_width,"            => null,
-		"launch_presentation_height,"           => null,
-		"launch_presentation_return_url,"       => null,
+		self::RESOURCE_LINK_TITLE                  => null,
+		self::RESOURCE_LINK_DESCRIPTION            => null,
+		self::USER_ID                              => null,
+		self::USER_IMAGE                           => null,
+		self::ROLES                                => null,
+		self::TOOL_CONSUMER_INSTANCE_GUID          => null,
+		self::TOOL_CONSUMER_INSTANCE_NAME          => null,
+		self::TOOL_CONSUMER_INSTANCE_DESCRIPTION   => null,
+		self::TOOL_CONSUMER_INSTANCE_URL           => null,
+		self::TOOL_CONSUMER_INSTANCE_CONTACT_EMAIL => null,
+		self::LIS_PERSON_SOURCEDID                 => null,
+		self::LIS_COURSE_OFFERING_SOURCEDID        => null,
+		self::LIS_COURSE_SECTION_SOURCEDID         => null,
+		self::LIS_RESULT_SOURCEDID                 => null,
+		self::LIS_PERSON_NAME_GIVEN                => null,
+		self::LIS_PERSON_NAME_FAMILY               => null,
+		self::LIS_PERSON_NAME_FULL                 => null,
+		self::LIS_PERSON_CONTACT_EMAIL_PRIMARY     => null,
+		self::CONTEXT_ID                           => null,
+		self::CONTEXT_TYPE                         => null,
+		self::CONTEXT_TITLE                        => null,
+		self::CONTEXT_LABEL                        => null,
+		self::LAUNCH_PRESENTATION_LOCALE           => null,
+		self::LAUNCH_PRESENTATION_DOCUMENT_TARGET  => null,
+		self::LAUNCH_PRESENTATION_WIDTH            => null,
+		self::LAUNCH_PRESENTATION_HEIGHT           => null,
+		self::LAUNCH_PRESENTATION_RETURN_URL       => null,
 	];
 
 	protected $custom = [];
@@ -44,36 +77,36 @@ class V1p0Builder implements V1p0BuilderInterface {
 
 	public function build(){
 		return new V1p0(
-			$this->inst["lti_message_type"],
-			$this->inst["lti_version"],
-			$this->inst["resource_link_id"],
-			$this->inst["resource_link_title"],
-			$this->inst["resource_link_description"],
-			$this->inst["user_id"],
-			$this->inst["user_image"],
-			$this->inst["roles"],
-			$this->inst["tool_consumer_instance_guid"],
-			$this->inst["tool_consumer_instance_name"],
-			$this->inst["tool_consumer_instance_description"],
-			$this->inst["tool_consumer_instance_url"],
-			$this->inst["tool_consumer_instance_contact_email"],
-			$this->inst["lis_person_sourcedid"],
-			$this->inst["lis_course_offering_sourcedid"],
-			$this->inst["lis_course_section_sourcedid"],
-			$this->inst["lis_result_sourcedid"],
-			$this->inst["lis_person_name_given"],
-			$this->inst["lis_person_name_family"],
-			$this->inst["lis_person_name_full"],
-			$this->inst["lis_person_contact_email_primary"],
-			$this->inst["context_id"],
-			$this->inst["context_type"],
-			$this->inst["context_title"],
-			$this->inst["context_label"],
-			$this->inst["launch_presentation_locale"],
-			$this->inst["launch_presentation_document_target"],
-			$this->inst["launch_presentation_width"],
-			$this->inst["launch_presentation_height"],
-			$this->inst["launch_presentation_return_url"],
+			$this->inst[self::LTI_MESSAGE_TYPE],
+			$this->inst[self::LTI_VERSION],
+			$this->inst[self::RESOURCE_LINK_ID],
+			$this->inst[self::RESOURCE_LINK_TITLE],
+			$this->inst[self::RESOURCE_LINK_DESCRIPTION],
+			$this->inst[self::USER_ID],
+			$this->inst[self::USER_IMAGE],
+			$this->inst[self::ROLES],
+			$this->inst[self::TOOL_CONSUMER_INSTANCE_GUID],
+			$this->inst[self::TOOL_CONSUMER_INSTANCE_NAME],
+			$this->inst[self::TOOL_CONSUMER_INSTANCE_DESCRIPTION],
+			$this->inst[self::TOOL_CONSUMER_INSTANCE_URL],
+			$this->inst[self::TOOL_CONSUMER_INSTANCE_CONTACT_EMAIL],
+			$this->inst[self::LIS_PERSON_SOURCEDID],
+			$this->inst[self::LIS_COURSE_OFFERING_SOURCEDID],
+			$this->inst[self::LIS_COURSE_SECTION_SOURCEDID],
+			$this->inst[self::LIS_RESULT_SOURCEDID],
+			$this->inst[self::LIS_PERSON_NAME_GIVEN],
+			$this->inst[self::LIS_PERSON_NAME_FAMILY],
+			$this->inst[self::LIS_PERSON_NAME_FULL],
+			$this->inst[self::LIS_PERSON_CONTACT_EMAIL_PRIMARY],
+			$this->inst[self::CONTEXT_ID],
+			$this->inst[self::CONTEXT_TYPE],
+			$this->inst[self::CONTEXT_TITLE],
+			$this->inst[self::CONTEXT_LABEL],
+			$this->inst[self::LAUNCH_PRESENTATION_LOCALE],
+			$this->inst[self::LAUNCH_PRESENTATION_DOCUMENT_TARGET],
+			$this->inst[self::LAUNCH_PRESENTATION_WIDTH],
+			$this->inst[self::LAUNCH_PRESENTATION_HEIGHT],
+			$this->inst[self::LAUNCH_PRESENTATION_RETURN_URL],
 			$this->custom,
 			$this->ext
 		);
@@ -84,7 +117,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * @param string $lti_message_type
 	 */
 	public function setLtiMessageType($lti_message_type){
-		$this->inst["lti_message_type"] = $lti_message_type;
+		$this->inst[self::LTI_MESSAGE_TYPE] = $lti_message_type;
 	}
 
 	/**
@@ -92,7 +125,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * @param string $lti_version
 	 */
 	public function setLtiVersion($lti_version){
-		$this->inst["lti_version"] = $lti_version;
+		$this->inst[self::LTI_VERSION] = $lti_version;
 	}
 
 	/**
@@ -100,7 +133,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * @param string $resource_link_id
 	 */
 	public function setResourceLinkId($resource_link_id){
-		$this->inst["resource_link_id"] = $resource_link_id;
+		$this->inst[self::RESOURCE_LINK_ID] = $resource_link_id;
 	}
 
 	/**
@@ -108,7 +141,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * @param string $resource_link_title
 	 */
 	public function setResourceLinkTitle($resource_link_title){
-		$this->inst["resource_link_title"] = $resource_link_title;
+		$this->inst[self::RESOURCE_LINK_TITLE] = $resource_link_title;
 	}
 
 	/**
@@ -116,7 +149,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * @param string $resource_link_description
 	 */
 	public function setResourceLinkDescription($resource_link_description){
-		$this->inst["resource_link_description"] = $resource_link_description;
+		$this->inst[self::RESOURCE_LINK_DESCRIPTION] = $resource_link_description;
 	}
 
 	/**
@@ -124,7 +157,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * @param string $user_id
 	 */
 	public function setUserId($user_id){
-		$this->inst["user_id"] = $user_id;
+		$this->inst[self::USER_ID] = $user_id;
 	}
 
 	/**
@@ -132,7 +165,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * @param string $user_image
 	 */
 	public function setUserImage($user_image){
-		$this->inst["user_image"] = $user_image;
+		$this->inst[self::USER_IMAGE] = $user_image;
 	}
 
 	/**
@@ -140,7 +173,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * @param string $roles
 	 */
 	public function setRoles($roles){
-		$this->inst["roles"] = $roles;
+		$this->inst[self::ROLES] = $roles;
 	}
 
 	/**
@@ -148,7 +181,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * @param string $lis_person_name_given
 	 */
 	public function setLisPersonNameGiven($lis_person_name_given){
-		$this->inst["lis_person_name_given"] = $lis_person_name_given;
+		$this->inst[self::LIS_PERSON_NAME_GIVEN] = $lis_person_name_given;
 	}
 
 	/**
@@ -156,7 +189,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * @param string $lis_person_name_family
 	 */
 	public function setLisPersonNameFamily($lis_person_name_family){
-		$this->inst["lis_person_name_family"] = $lis_person_name_family;
+		$this->inst[self::LIS_PERSON_NAME_FAMILY] = $lis_person_name_family;
 	}
 
 	/**
@@ -164,7 +197,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * @param string $lis_person_name_full
 	 */
 	public function setLisPersonNameFull($lis_person_name_full){
-		$this->inst["lis_person_name_full"] = $lis_person_name_full;
+		$this->inst[self::LIS_PERSON_NAME_FULL] = $lis_person_name_full;
 	}
 
 	/**
@@ -172,7 +205,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * @param string $lis_person_contact_email_primary
 	 */
 	public function setLisPersonContactEmailPrimary($lis_person_contact_email_primary){
-		$this->inst["lis_person_contact_email_primary"] = $lis_person_contact_email_primary;
+		$this->inst[self::LIS_PERSON_CONTACT_EMAIL_PRIMARY] = $lis_person_contact_email_primary;
 	}
 
 	/**
@@ -180,7 +213,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * @param string $context_id
 	 */
 	public function setContextId($context_id){
-		$this->inst["context_id"] = $context_id;
+		$this->inst[self::CONTEXT_ID] = $context_id;
 	}
 
 	/**
@@ -188,7 +221,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * @param string $context_type
 	 */
 	public function setContextType($context_type){
-		$this->inst["context_type"] = $context_type;
+		$this->inst[self::CONTEXT_TYPE] = $context_type;
 	}
 
 	/**
@@ -196,7 +229,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * @param string $context_title
 	 */
 	public function setContextTitle($context_title){
-		$this->inst["context_title"] = $context_title;
+		$this->inst[self::CONTEXT_TITLE] = $context_title;
 	}
 
 	/**
@@ -204,7 +237,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * @param string $context_label
 	 */
 	public function setContextLabel($context_label){
-		$this->inst["context_label"] = $context_label;
+		$this->inst[self::CONTEXT_LABEL] = $context_label;
 	}
 
 	/**
@@ -212,7 +245,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * @param string $launch_presentation_locale
 	 */
 	public function setLaunchPresentationLocale($launch_presentation_locale){
-		$this->inst["launch_presentation_locale"] = $launch_presentation_locale;
+		$this->inst[self::LAUNCH_PRESENTATION_LOCALE] = $launch_presentation_locale;
 	}
 
 	/**
@@ -220,7 +253,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * @param string $launch_presentation_document_target
 	 */
 	public function setLaunchPresentationDocumentTarget($launch_presentation_document_target){
-		$this->inst["launch_presentation_document_target"] = $launch_presentation_document_target;
+		$this->inst[self::LAUNCH_PRESENTATION_DOCUMENT_TARGET] = $launch_presentation_document_target;
 	}
 
 	/**
@@ -228,7 +261,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * @param string $launch_presentation_width
 	 */
 	public function setLaunchPresentationWidth($launch_presentation_width){
-		$this->inst["launch_presentation_width"] = $launch_presentation_width;
+		$this->inst[self::LAUNCH_PRESENTATION_WIDTH] = $launch_presentation_width;
 	}
 
 	/**
@@ -236,7 +269,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * @param string $launch_presentation_height
 	 */
 	public function setLaunchPresentationHeight($launch_presentation_height){
-		$this->inst["launch_presentation_height"] = $launch_presentation_height;
+		$this->inst[self::LAUNCH_PRESENTATION_HEIGHT] = $launch_presentation_height;
 	}
 
 	/**
@@ -244,7 +277,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * @param string $launch_presentation_return_url
 	 */
 	public function setLaunchPresentationReturnUrl($launch_presentation_return_url){
-		$this->inst["launch_presentation_return_url"] = $launch_presentation_return_url;
+		$this->inst[self::LAUNCH_PRESENTATION_RETURN_URL] = $launch_presentation_return_url;
 	}
 
 	/**
@@ -252,7 +285,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * @param string $tool_consumer_instance_guid
 	 */
 	public function setToolConsumerInstanceGuid($tool_consumer_instance_guid){
-		$this->inst["tool_consumer_instance_guid"] = $tool_consumer_instance_guid;
+		$this->inst[self::TOOL_CONSUMER_INSTANCE_GUID] = $tool_consumer_instance_guid;
 	}
 
 	/**
@@ -260,7 +293,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * @param string $tool_consumer_instance_name
 	 */
 	public function setToolConsumerInstanceName($tool_consumer_instance_name){
-		$this->inst["tool_consumer_instance_name"] = $tool_consumer_instance_name;
+		$this->inst[self::TOOL_CONSUMER_INSTANCE_NAME] = $tool_consumer_instance_name;
 	}
 
 	/**
@@ -268,7 +301,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * @param string $tool_consumer_instance_description
 	 */
 	public function setToolConsumerInstanceDescription($tool_consumer_instance_description){
-		$this->inst["tool_consumer_instance_description"] = $tool_consumer_instance_description;
+		$this->inst[self::TOOL_CONSUMER_INSTANCE_DESCRIPTION] = $tool_consumer_instance_description;
 	}
 
 	/**
@@ -276,7 +309,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * @param string $tool_consumer_instance_url
 	 */
 	public function setToolConsumerInstanceUrl($tool_consumer_instance_url){
-		$this->inst["tool_consumer_instance_url"] = $tool_consumer_instance_url;
+		$this->inst[self::TOOL_CONSUMER_INSTANCE_URL] = $tool_consumer_instance_url;
 	}
 
 	/**
@@ -284,7 +317,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * @param string $tool_consumer_instance_contact_email
 	 */
 	public function setToolConsumerInstanceContactEmail($tool_consumer_instance_contact_email){
-		$this->inst["tool_consumer_instance_contact_email"] = $tool_consumer_instance_contact_email;
+		$this->inst[self::TOOL_CONSUMER_INSTANCE_CONTACT_EMAIL] = $tool_consumer_instance_contact_email;
 	}
 
 	/**
@@ -292,7 +325,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * @param string $lis_result_sourcedid
 	 */
 	public function setLisResultSourcedid($lis_result_sourcedid){
-		$this->inst["lis_result_sourcedid"] = $lis_result_sourcedid;
+		$this->inst[self::LIS_RESULT_SOURCEDID] = $lis_result_sourcedid;
 	}
 
 	/**
@@ -300,7 +333,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * @param string $lis_person_sourcedid
 	 */
 	public function setLisPersonSourcedid($lis_person_sourcedid){
-		$this->inst["lis_person_sourcedid"] = $lis_person_sourcedid;
+		$this->inst[self::LIS_PERSON_SOURCEDID] = $lis_person_sourcedid;
 	}
 
 	/**
@@ -308,7 +341,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * @param string $lis_course_offering_sourcedid
 	 */
 	public function setLisCourseOfferingsourcedid($lis_course_offering_sourcedid){
-		$this->inst["lis_course_offering_sourcedid"] = $lis_course_offering_sourcedid;
+		$this->inst[self::LIS_COURSE_OFFERING_SOURCEDID] = $lis_course_offering_sourcedid;
 	}
 
 	/**
@@ -316,7 +349,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * @param string $lis_course_section_sourcedid
 	 */
 	public function setLisCourseSectionsourcedid($lis_course_section_sourcedid){
-		$this->inst["lis_course_section_sourcedid"] = $lis_course_section_sourcedid;
+		$this->inst[self::LIS_COURSE_SECTION_SOURCEDID] = $lis_course_section_sourcedid;
 	}
 
 	/**
@@ -326,7 +359,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	public function setCustomParams(array $params){
 		foreach($params as $key => $value){
 			$key = strtolower($key);
-			if(strpos($key, "custom_") === 0){
+			if(strpos($key, self::PREFIX_CUSTOM) === 0){
 				$this->custom[$key] = $value;
 			}
 		}
@@ -339,7 +372,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	public function setExtParams(array $params){
 		foreach($params as $key => $value){
 			$key = strtolower($key);
-			if(strpos($key, "ext_") === 0){
+			if(strpos($key, self::PREFIX_EXT) === 0){
 				$this->ext[$key] = $value;
 			}
 		}

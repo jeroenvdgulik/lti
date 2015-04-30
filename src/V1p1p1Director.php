@@ -16,23 +16,26 @@ class V1p1p1Director {
 
 	public function buildLtiRequest(array $params){
 
+		//necessary for constants
+		$builder = $this->builder;
+
 		// REQUIRED
 		////////////////////////////////////////////////////////////////////////
 
-		if(isset($params["lti_message_type"])){
-			$this->builder->setLtiMessageType($params["lti_message_type"]);
+		if(isset($params[$builder::LTI_MESSAGE_TYPE])){
+			$this->builder->setLtiMessageType($params[$builder::LTI_MESSAGE_TYPE]);
 		}else{
 			throw new Exceptions\MissingRequiredParameterException("LTI v 1.x requires the paramter 'lti_message_type'.");
 		}
 
-		if(isset($params["lti_version"])){
-			$this->builder->setLtiVersion($params["lti_version"]);
+		if(isset($params[$builder::LTI_VERSION])){
+			$this->builder->setLtiVersion($params[$builder::LTI_VERSION]);
 		}else{
 			throw new Exceptions\MissingRequiredParameterException("LTI v 1.x requires the paramter 'lti_version'.");
 		}
 
-		if(isset($params["resource_link_id"])){
-			$this->builder->setResourceLinkId($params["resource_link_id"]);
+		if(isset($params[$builder::RESOURCE_LINK_ID])){
+			$this->builder->setResourceLinkId($params[$builder::RESOURCE_LINK_ID]);
 		}else{
 			throw new Exceptions\MissingRequiredParameterException("LTI v 1.x requires the paramter 'resource_link_id'.");
 		}
@@ -40,73 +43,73 @@ class V1p1p1Director {
 		// RECOMMENDED or OPTIONAL
 		////////////////////////////////////////////////////////////////////////
 
-		$this->builder->setResourceLinkTitle($this->getKey($params, "resource_link_title"));
+		$this->builder->setResourceLinkTitle($this->getKey($params, $builder::RESOURCE_LINK_TITLE));
 
-		$this->builder->setResourceLinkDescription($this->getKey($params, "resource_link_description"));
+		$this->builder->setResourceLinkDescription($this->getKey($params, $builder::RESOURCE_LINK_DESCRIPTION));
 
-		$this->builder->setUserId($this->getKey($params, "user_id"));
+		$this->builder->setUserId($this->getKey($params, $builder::USER_ID));
 
-		$this->builder->setUserImage($this->getKey($params, "user_image"));
+		$this->builder->setUserImage($this->getKey($params, $builder::USER_IMAGE));
 
-		$this->builder->setRoles($this->getKey($params, "roles"));
+		$this->builder->setRoles($this->getKey($params, $builder::ROLES));
 
-		$this->builder->setRoleScopeMentor($this->getKey($params, "role_scope_mentor"));
+		$this->builder->setRoleScopeMentor($this->getKey($params, $builder::ROLE_SCOPE_MENTOR));
 
-		$this->builder->setLisPersonNameGiven($this->getKey($params, "lis_person_name_given"));
+		$this->builder->setLisPersonNameGiven($this->getKey($params, $builder::LIS_PERSON_NAME_GIVEN));
 
-		$this->builder->setLisPersonNameFamily($this->getKey($params, "lis_person_name_family"));
+		$this->builder->setLisPersonNameFamily($this->getKey($params, $builder::LIS_PERSON_NAME_FAMILY));
 
-		$this->builder->setLisPersonNameFull($this->getKey($params, "lis_person_name_full"));
+		$this->builder->setLisPersonNameFull($this->getKey($params, $builder::LIS_PERSON_NAME_FULL));
 
-		$this->builder->setLisPersonContactEmailPrimary($this->getKey($params, "lis_person_contact_email_primary"));
+		$this->builder->setLisPersonContactEmailPrimary($this->getKey($params, $builder::LIS_PERSON_CONTACT_EMAIL_PRIMARY));
 
-		$this->builder->setContextId($this->getKey($params, "context_id"));
+		$this->builder->setContextId($this->getKey($params, $builder::CONTEXT_ID));
 
-		$this->builder->setContextType($this->getKey($params, "context_type"));
+		$this->builder->setContextType($this->getKey($params, $builder::CONTEXT_TYPE));
 
-		$this->builder->setContextTitle($this->getKey($params, "context_title"));
+		$this->builder->setContextTitle($this->getKey($params, $builder::CONTEXT_TITLE));
 
-		$this->builder->setContextLabel($this->getKey($params, "context_label"));
+		$this->builder->setContextLabel($this->getKey($params, $builder::CONTEXT_LABEL));
 
-		$this->builder->setLaunchPresentationLocale($this->getKey($params, "launch_presentation_locale"));
+		$this->builder->setLaunchPresentationLocale($this->getKey($params, $builder::LAUNCH_PRESENTATION_LOCALE));
 
-		$this->builder->setLaunchPresentationDocumentTarget($this->getKey($params, "launch_presentation_document_target"));
+		$this->builder->setLaunchPresentationDocumentTarget($this->getKey($params, $builder::LAUNCH_PRESENTATION_DOCUMENT_TARGET));
 
-		$this->builder->setLaunchPresentationCssUrl($this->getKey($params, "launch_presentation_css_url"));
+		$this->builder->setLaunchPresentationCssUrl($this->getKey($params, $builder::LAUNCH_PRESENTATION_CSS_URL));
 
-		$this->builder->setLaunchPresentationWidth($this->getKey($params, "launch_presentation_width"));
+		$this->builder->setLaunchPresentationWidth($this->getKey($params, $builder::LAUNCH_PRESENTATION_WIDTH));
 
-		$this->builder->setLaunchPresentationHeight($this->getKey($params, "launch_presentation_height"));
+		$this->builder->setLaunchPresentationHeight($this->getKey($params, $builder::LAUNCH_PRESENTATION_HEIGHT));
 
-		$this->builder->setLaunchPresentationReturnUrl($this->getKey($params, "launch_presentation_return_url"));
+		$this->builder->setLaunchPresentationReturnUrl($this->getKey($params, $builder::LAUNCH_PRESENTATION_RETURN_URL));
 
-		$this->builder->setToolConsumerInfoProductFamilyCode($this->getKey($params, "tool_consumer_info_product_family_code"));
+		$this->builder->setToolConsumerInfoProductFamilyCode($this->getKey($params, $builder::TOOL_CONSUMER_INFO_PRODUCT_FAMILY_CODE));
 
-		$this->builder->setToolConsumerInfoVersion($this->getKey($params, "tool_consumer_info_version"));
+		$this->builder->setToolConsumerInfoVersion($this->getKey($params, $builder::TOOL_CONSUMER_INFO_VERSION));
 
-		$this->builder->setToolConsumerInstanceGuid($this->getKey($params, "tool_consumer_instance_guid"));
+		$this->builder->setToolConsumerInstanceGuid($this->getKey($params, $builder::TOOL_CONSUMER_INSTANCE_GUID));
 
-		$this->builder->setToolConsumerInstanceName($this->getKey($params, "tool_consumer_instance_name"));
+		$this->builder->setToolConsumerInstanceName($this->getKey($params, $builder::TOOL_CONSUMER_INSTANCE_NAME));
 
-		$this->builder->setToolConsumerInstanceDescription($this->getKey($params, "tool_consumer_instance_description"));
+		$this->builder->setToolConsumerInstanceDescription($this->getKey($params, $builder::TOOL_CONSUMER_INSTANCE_DESCRIPTION));
 
-		$this->builder->setToolConsumerInstanceUrl($this->getKey($params, "tool_consumer_instance_url"));
+		$this->builder->setToolConsumerInstanceUrl($this->getKey($params, $builder::TOOL_CONSUMER_INSTANCE_URL));
 
-		$this->builder->setToolConsumerInstanceContactEmail($this->getKey($params, "tool_consumer_instance_contact_email"));
+		$this->builder->setToolConsumerInstanceContactEmail($this->getKey($params, $builder::TOOL_CONSUMER_INSTANCE_CONTACT_EMAIL));
 
-		$this->builder->setLisResultSourcedid($this->getKey($params, "lis_result_sourcedid"));
+		$this->builder->setLisResultSourcedid($this->getKey($params, $builder::LIS_RESULT_SOURCEDID));
 
-		$this->builder->setLisOutcomeServiceUrl($this->getKey($params, "lis_outcome_service_url"));
+		$this->builder->setLisOutcomeServiceUrl($this->getKey($params, $builder::LIS_OUTCOME_SERVICE_URL));
 
-		$this->builder->setLisPersonSourcedid($this->getKey($params, "lis_person_sourcedid"));
+		$this->builder->setLisPersonSourcedid($this->getKey($params, $builder::LIS_PERSON_SOURCEDID));
 
-		$this->builder->setLisCourseOfferingsourcedid($this->getKey($params, "lis_course_offering_sourcedid"));
+		$this->builder->setLisCourseOfferingsourcedid($this->getKey($params, $builder::LIS_COURSE_OFFERING_SOURCEDID));
 
-		$this->builder->setLisCourseSectionsourcedid($this->getKey($params, "lis_course_section_sourcedid"));
+		$this->builder->setLisCourseSectionsourcedid($this->getKey($params, $builder::LIS_COURSE_SECTION_SOURCEDID));
 
 		$custom = [];
 		foreach($params as $key => $value){
-			if(stripos($key, "custom_") === 0){
+			if(stripos($key, $builder::PREFIX_CUSTOM) === 0){
 				$custom[$key] = $value;
 			}
 		}
@@ -115,7 +118,7 @@ class V1p1p1Director {
 
 		$ext = [];
 		foreach($params as $key => $value){
-			if(stripos($key, "ext_") === 0){
+			if(stripos($key, $builder::PREFIX_EXT) === 0){
 				$ext[$key] = $value;
 			}
 		}
