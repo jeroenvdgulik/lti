@@ -2,4 +2,4 @@
 
 namespace Lti\Exceptions;
 
-class InvalidVersionException extends LtiException{}
+class InvalidVersionException extends LtiException {}

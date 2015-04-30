@@ -2,4 +2,4 @@
 
 namespace Lti\Exceptions;
 
-class InvalidNonceException extends LtiException{}
+class InvalidNonceException extends LtiException {}

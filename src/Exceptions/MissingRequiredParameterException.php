@@ -2,4 +2,4 @@
 
 namespace Lti\Exceptions;
 
-class MissingRequiredParameterException extends LtiException{}
+class MissingRequiredParameterException extends LtiException {}
