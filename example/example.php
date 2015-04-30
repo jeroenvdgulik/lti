@@ -25,7 +25,7 @@ $message = "SUCCESS!!";
 try{
 	$director->buildLtiRequest($params);
 	$Obj3 = $director->getLtiRequest();
-}catch(\Lti\LtiException $e){
+}catch(\Lti\LtiException $e) {
 	$message = $e->getMessage();
 }
 

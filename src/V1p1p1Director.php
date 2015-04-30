@@ -6,11 +6,11 @@ class V1p1p1Director {
 
 	protected $builder;
 
-	public function __construct(V1p1p1Builder $builder){
+	public function __construct(V1p1p1Builder $builder) {
 		$this->builder = $builder;
 	}
 
-	public function getLtiRequest(){
+	public function getLtiRequest() {
 		return $this->builder->build();
 	}
 

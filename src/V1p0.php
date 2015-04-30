@@ -40,210 +40,210 @@ class V1p0 implements V1p0Interface {
 	/**
 	 * get the lti_message_type
 	 */
-	public function getLtiMessageType(){
+	public function getLtiMessageType() {
 		return $this->lti_message_type;
 	}
 
 	/**
 	 * get the lti_version
 	 */
-	public function getLtiVersion(){
+	public function getLtiVersion() {
 		return $this->lti_version;
 	}
 
 	/**
 	 * get the resource_link_id
 	 */
-	public function getResourceLinkId(){
+	public function getResourceLinkId() {
 		return $this->resource_link_id;
 	}
 
 	/**
 	 * get the resource_link_title
 	 */
-	public function getResourceLinkTitle(){
+	public function getResourceLinkTitle() {
 		return $this->resource_link_title;
 	}
 
 	/**
 	 * get the resource_link_description
 	 */
-	public function getResourceLinkDescription(){
+	public function getResourceLinkDescription() {
 		return $this->resource_link_description;
 	}
 
 	/**
 	 * get the user_id
 	 */
-	public function getUserId(){
+	public function getUserId() {
 		return $this->user_id;
 	}
 
 	/**
 	 * get the user_image
 	 */
-	public function getUserImage(){
+	public function getUserImage() {
 		return $this->user_image;
 	}
 
 	/**
 	 * get the roles
 	 */
-	public function getRoles(){
+	public function getRoles() {
 		return $this->roles;
 	}
 
 	/**
 	 * get the lis_person_name_given
 	 */
-	public function getLisPersonNameGiven(){
+	public function getLisPersonNameGiven() {
 		return $this->lis_person_name_given;
 	}
 
 	/**
 	 * get the lis_person_name_family
 	 */
-	public function getLisPersonNameFamily(){
+	public function getLisPersonNameFamily() {
 		return $this->lis_person_name_family;
 	}
 
 	/**
 	 * get the lis_person_name_full
 	 */
-	public function getLisPersonNameFull(){
+	public function getLisPersonNameFull() {
 		return $this->lis_person_name_full;
 	}
 
 	/**
 	 * get the lis_person_contact_email_primary
 	 */
-	public function getLisPersonContactEmailPrimary(){
+	public function getLisPersonContactEmailPrimary() {
 		return $this->lis_person_contact_email_primary;
 	}
 
 	/**
 	 * get the context_id
 	 */
-	public function getContextId(){
+	public function getContextId() {
 		return $this->context_id;
 	}
 
 	/**
 	 * get the context_type
 	 */
-	public function getContextType(){
+	public function getContextType() {
 		return $this->context_type;
 	}
 
 	/**
 	 * get the context_title
 	 */
-	public function getContextTitle(){
+	public function getContextTitle() {
 		return $this->context_title;
 	}
 
 	/**
 	 * get the context_label
 	 */
-	public function getContextLabel(){
+	public function getContextLabel() {
 		return $this->context_label;
 	}
 
 	/**
 	 * get the launch_presentation_locale
 	 */
-	public function getLaunchPresentationLocale(){
+	public function getLaunchPresentationLocale() {
 		return $this->launch_presentation_locale;
 	}
 
 	/**
 	 * get the launch_presentation_document_target
 	 */
-	public function getLaunchPresentationDocumentTarget(){
+	public function getLaunchPresentationDocumentTarget() {
 		return $this->launch_presentation_document_target;
 	}
 
 	/**
 	 * get the launch_presentation_width
 	 */
-	public function getLaunchPresentationWidth(){
+	public function getLaunchPresentationWidth() {
 		return $this->launch_presentation_width;
 	}
 
 	/**
 	 * get the launch_presentation_height
 	 */
-	public function getLaunchPresentationHeight(){
+	public function getLaunchPresentationHeight() {
 		return $this->launch_presentation_height;
 	}
 
 	/**
 	 * get the launch_presentation_return_url
 	 */
-	public function getLaunchPresentationReturnUrl(){
+	public function getLaunchPresentationReturnUrl() {
 		return $this->launch_presentation_return_url;
 	}
 
 	/**
 	 * get the tool_consumer_instance_guid
 	 */
-	public function getToolConsumerInstanceGuid(){
+	public function getToolConsumerInstanceGuid() {
 		return $this->tool_consumer_instance_guid;
 	}
 
 	/**
 	 * get the tool_consumer_instance_name
 	 */
-	public function getToolConsumerInstanceName(){
+	public function getToolConsumerInstanceName() {
 		return $this->tool_consumer_instance_name;
 	}
 
 	/**
 	 * get the tool_consumer_instance_description
 	 */
-	public function getToolConsumerInstanceDescription(){
+	public function getToolConsumerInstanceDescription() {
 		return $this->tool_consumer_instance_description;
 	}
 
 	/**
 	 * get the tool_consumer_instance_url
 	 */
-	public function getToolConsumerInstanceUrl(){
+	public function getToolConsumerInstanceUrl() {
 		return $this->tool_consumer_instance_url;
 	}
 
 	/**
 	 * get the tool_consumer_instance_contact_email
 	 */
-	public function getToolConsumerInstanceContactEmail(){
+	public function getToolConsumerInstanceContactEmail() {
 		return $this->tool_consumer_instance_contact_email;
 	}
 
 	/**
 	 * get the lis_result_sourcedid
 	 */
-	public function getLisResultSourcedid(){
+	public function getLisResultSourcedid() {
 		return $this->lis_result_sourcedid;
 	}
 
 	/**
 	 * get the lis_person_sourcedid
 	 */
-	public function getLisPersonSourcedid(){
+	public function getLisPersonSourcedid() {
 		return $this->lis_person_sourcedid;
 	}
 
 	/**
 	 * get the lis_course_offering_sourcedid
 	 */
-	public function getLisCourseOfferingsourcedid(){
+	public function getLisCourseOfferingsourcedid() {
 		return $this->lis_course_offering_sourcedid;
 	}
 
 	/**
 	 * get the lis_course_section_sourcedid
 	 */
-	public function getLisCourseSectionsourcedid(){
+	public function getLisCourseSectionsourcedid() {
 		return $this->lis_course_section_sourcedid;
 	}
 
@@ -251,8 +251,8 @@ class V1p0 implements V1p0Interface {
 	 * get a custom param
 	 * @param string $key The key to get
 	 */
-	public function getCustomParam($key){
-		if(isset($this->custom[$key])){
+	public function getCustomParam($key) {
+		if(isset($this->custom[$key])) {
 			return $this->custom[$key];
 		}
 	}
@@ -260,7 +260,7 @@ class V1p0 implements V1p0Interface {
 	/**
 	 * get all custom params
 	 */
-	public function getAllCustomParams(){
+	public function getAllCustomParams() {
 		return $this->custom;
 	}
 
@@ -268,8 +268,8 @@ class V1p0 implements V1p0Interface {
 	 * get a ext param
 	 * @param string $key The key to get
 	 */
-	public function getExtParam($key){
-		if(isset($this->ext[$key])){
+	public function getExtParam($key) {
+		if(isset($this->ext[$key])) {
 			return $this->ext[$key];
 		}
 	}
@@ -277,7 +277,7 @@ class V1p0 implements V1p0Interface {
 	/**
 	 * get all ext params
 	 */
-	public function getAllExtParams(){
+	public function getAllExtParams() {
 		return $this->ext;
 	}
 
@@ -314,7 +314,7 @@ class V1p0 implements V1p0Interface {
 		$launch_presentation_return_url,
 		array $custom_,
 		array $ext_
-	){
+	) {
 		$this->lti_message_type                     = $lti_message_type;
 		$this->lti_version                          = $lti_version;
 		$this->resource_link_id                     = $resource_link_id;

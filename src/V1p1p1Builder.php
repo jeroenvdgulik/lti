@@ -43,7 +43,7 @@ class V1p1p1Builder extends V1p1Builder implements V1p1p1BuilderInterface {
 		"lis_course_section_sourcedid"           => null,
 	];
 
-	public function build(){
+	public function build() {
 		return new V1p1p1(
 			$this->inst["lti_message_type"],
 			$this->inst["lti_version"],
@@ -86,11 +86,11 @@ class V1p1p1Builder extends V1p1Builder implements V1p1p1BuilderInterface {
 	}
 
 	/**
-	 * set the launch_presentation_css_url
-	 * @param string $launch_presentation_css_url
+	 * set the role_scope_mentor
+	 * @param string $role_scope_mentor
 	 */
-	public function setRoleScopeMentor($role_scope_mentor){
 		$this->inst["role_scope_mentor"] = $role_scope_mentor;
+	public function setRoleScopeMentor($role_scope_mentor) {
 	}
 
 }

@@ -42,7 +42,7 @@ class V1p1Builder extends V1p0Builder implements V1p1BuilderInterface {
 		"lis_course_section_sourcedid"           => null,
 	];
 
-	public function build(){
+	public function build() {
 		return new V1p1(
 			$this->inst["lti_message_type"],
 			$this->inst["lti_version"],
@@ -87,32 +87,32 @@ class V1p1Builder extends V1p0Builder implements V1p1BuilderInterface {
 	 * set the launch_presentation_css_url
 	 * @param string $launch_presentation_css_url
 	 */
-	public function setLaunchPresentationCssUrl($launch_presentation_css_url){
 		$this->inst["launch_presentation_css_url"] = $launch_presentation_css_url;
+	public function setLaunchPresentationCssUrl($launch_presentation_css_url) {
 	}
 
 	/**
 	 * set the tool_consumer_info_product_family_code
 	 * @param string $tool_consumer_info_product_family_code
 	 */
-	public function setToolConsumerInfoProductFamilyCode($tool_consumer_info_product_family_code){
 		$this->inst["tool_consumer_info_product_family_code"] = $tool_consumer_info_product_family_code;
+	public function setToolConsumerInfoProductFamilyCode($tool_consumer_info_product_family_code) {
 	}
 
 	/**
 	 * set the tool_consumer_info_version
 	 * @param string $tool_consumer_info_version
 	 */
-	public function setToolConsumerInfoVersion($tool_consumer_info_version){
 		$this->inst["tool_consumer_info_version"] = $tool_consumer_info_version;
+	public function setToolConsumerInfoVersion($tool_consumer_info_version) {
 	}
 
 	/**
 	 * set the lis_outcome_service_url
 	 * @param string $lis_outcome_service_url
 	 */
-	public function setLisOutcomeServiceUrl($lis_outcome_service_url){
 		$this->inst["lis_outcome_service_url"] = $lis_outcome_service_url;
+	public function setLisOutcomeServiceUrl($lis_outcome_service_url) {
 	}
 
 }
