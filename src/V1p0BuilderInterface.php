@@ -188,13 +188,13 @@ interface V1p0BuilderInterface {
 
 	/**
 	 * set custom params
-	 * @param array $param An array of custom_key => value pair
+	 * @param array $params An array of custom_key => value pair
 	 */
 	function setCustomParams(array $params);
 
 	/**
 	 * set ext params
-	 * @param array $param An array of ext_key => value pair
+	 * @param array $params An array of ext_key => value pair
 	 */
 	function setExtParams(array $params);
 

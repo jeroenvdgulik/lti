@@ -12,28 +12,28 @@ class V1p1 extends V1p0 implements V1p1Interface {
 	/**
 	 * get the launch_presentation_css_url
 	 */
-	public function getLaunchPresentationCssUrl(){
+	public function getLaunchPresentationCssUrl() {
 		return $this->launch_presentation_css_url;
 	}
 
 	/**
 	 * get the tool_consumer_info_product_family_code
 	 */
-	public function getToolConsumerInfoProductFamilyCode(){
+	public function getToolConsumerInfoProductFamilyCode() {
 		return $this->tool_consumer_info_product_family_code;
 	}
 
 	/**
 	 * get the tool_consumer_info_version
 	 */
-	public function getToolConsumerInfoVersion(){
+	public function getToolConsumerInfoVersion() {
 		return $this->tool_consumer_info_version;
 	}
 
 	/**
 	 * get the lis_outcome_service_url
 	 */
-	public function getLisOutcomeServiceUrl(){
+	public function getLisOutcomeServiceUrl() {
 		return $this->lis_outcome_service_url;
 	}
 
@@ -74,7 +74,7 @@ class V1p1 extends V1p0 implements V1p1Interface {
 		$lis_course_section_sourcedid,
 		array $custom_,
 		array $ext_
-	){
+	) {
 		$this->lti_message_type                     = $lti_message_type;
 		$this->lti_version                          = $lti_version;
 		$this->resource_link_id                     = $resource_link_id;

@@ -19,6 +19,9 @@ class SlimOauth {
 	 */
 	protected $timestampExpiration = 3;
 
+	/**
+	 * additional params `oauth_body_hash` and `oauth_callback`
+	 */
 	private $requiredKeys = [
 		"oauth_nonce",
 		"oauth_timestamp",
@@ -30,9 +33,9 @@ class SlimOauth {
 	/**
 	 * the general use case is tied to a specific request
 	 * @param string $endpoint The requested endpoint to use in signing
-	 * @param NonceMapperInterface $$nonmapper The data source for checking nonces
+	 * @param NonceMapperInterface $nonceMapper The data source for checking nonces
 	 */
-	public function __construct($endpoint, NonceMapperInterface $nonceMapper){
+	public function __construct($endpoint, NonceMapperInterface $nonceMapper) {
 		$this->setEndpoint($endpoint);
 		$this->nonceMapper = $nonceMapper;
 	}
@@ -40,9 +43,9 @@ class SlimOauth {
 	/**
 	 * protected properties that *could* change given certain use cases should have
 	 * an accessor method
-	 * @param string $endopint The URL to use in the signature
+	 * @param string $endpoint The URL to use in the signature
 	 */
-	public function setEndpoint($endpoint){
+	public function setEndpoint($endpoint) {
 		$this->endpoint = $endpoint;
 	}
 
@@ -51,16 +54,16 @@ class SlimOauth {
 	 * an accessor method
 	 * @param string $clientSecret The client secret to use for the signing key
 	 */
-	public function setClientSecret($clientSecret){
+	public function setClientSecret($clientSecret) {
 		$this->clientSecret = $clientSecret;
 	}
 
 	/**
 	 * this allows the adjustment of the timestamp tolerance (in minutes). a 0 (zero)
 	 * value means no expiration
-	 * @param numeric $minutes The max age in minutes of a valid timestamp
+	 * @param int $minutes The max age in minutes of a valid timestamp
 	 */
-	public function setTimestampExpiration($minutes){
+	public function setTimestampExpiration($minutes) {
 		$this->timestampExpiration = $minutes;
 	}
 
@@ -69,14 +72,14 @@ class SlimOauth {
 	 * @param string $clientSecret The client secret to use for the signing key
 	 * @param array $params The array of both required and additional params sent as the payload
 	 */
-	public function verifySignature($clientSecret, array $params){
-		if(!isset($params["oauth_signature"])){
+	public function verifySignature($clientSecret, array $params) {
+		if(!isset($params["oauth_signature"])) {
 			throw new Exceptions\MissingRequiredParameterException("Oauth signing requires an oauth_signature.");
 		}
 
 		$existingSig  = $params["oauth_signature"];
 		$recreatedSig = $this->createSignature($clientSecret, $params);
-		if($recreatedSig == $existingSig){
+		if($recreatedSig == $existingSig) {
 			return true;
 		}
 		return false;
@@ -88,7 +91,7 @@ class SlimOauth {
 	 * @param string $clientSecret The client secret to use for the signing key
 	 * @param array $params The array of both required and additional params used for the signature
 	 */
-	public function createSignature($clientSecret, array $params){
+	public function createSignature($clientSecret, array $params) {
 		$this->setClientSecret($clientSecret);
 
 		$body = $this->makeSignatureBody($params);
@@ -102,7 +105,7 @@ class SlimOauth {
 	 * @param string $body The properly formatted string of request params
 	 * @param  string $signingKey The key use to sign the hash
 	 */
-	protected function createHash($body, $signingKey) {
+	public function createHash($body, $signingKey) {
 		return base64_encode(hash_hmac('sha1', $body, $signingKey, true));
 	}
 
@@ -147,8 +150,8 @@ class SlimOauth {
 	 * @param array $params The array of both required params used for the signature
 	 */
 	protected function validateRequiredParameters(array $params) {
-		foreach($this->requiredKeys as $key){
-			if(!array_key_exists($key, $params)){
+		foreach($this->requiredKeys as $key) {
+			if(!array_key_exists($key, $params)) {
 				throw new Exceptions\MissingRequiredParameterException("Oauth signing requires an {$key}.");
 			}
 		}
@@ -157,7 +160,7 @@ class SlimOauth {
 		$this->validateTimestamp($params["oauth_timestamp"]);
 		$this->validateVersion($params["oauth_version"]);
 		$this->validateSigningMethod($params["oauth_signature_method"]);
-		if(isset($params["oauth_callback"])){
+		if(isset($params["oauth_callback"])) {
 			$this->validateCallback($params["oauth_callback"]);
 		}
 
@@ -168,7 +171,7 @@ class SlimOauth {
 	 * @param string $nonce The only-used-once value to check
 	 */
 	protected function validateNonce($nonce) {
-		if($this->nonceMapper->get($nonce) !== null){
+		if($this->nonceMapper->get($nonce) !== null) {
 			throw new Exceptions\InvalidNonceException("Nonce '{$nonce}' has already been used.");
 		}
 
@@ -182,7 +185,7 @@ class SlimOauth {
 	protected function validateTimestamp($timestamp) {
 		$expire = $this->timestampExpiration;
 		$maxAge = \WM\ONE_MINUTE * $expire;
-		if( $expire && ( ( time() - $maxAge ) > $timestamp) ){
+		if( $expire && ( ( time() - $maxAge ) > $timestamp) ) {
 			throw new Exceptions\InvalidTimestampException("Timestamp is expired.");
 		}
 	}

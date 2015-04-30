@@ -6,7 +6,7 @@ class SlimOauthTest extends \PHPUnit_Framework_TestCase {
 
 	protected $endpoint = "http://myon.com/api/Lti/v1.1/accept.php";
 
-	function getMockNonceMapper($nonce = null){
+	function getMockNonceMapper($nonce = null) {
 		// Create a stub for the SomeClass class.
 		$stub = $this->getMockBuilder('Lti\\NonceMapperInterface')
 					 ->disableOriginalConstructor()
@@ -23,7 +23,7 @@ class SlimOauthTest extends \PHPUnit_Framework_TestCase {
 		return $stub;
 	}
 
-	function test_setTimestampExpiration_no_expire(){
+	function test_setTimestampExpiration_no_expire() {
 
 		$params = [
 			"oauth_nonce"            => "snarktastic",
@@ -48,7 +48,7 @@ class SlimOauthTest extends \PHPUnit_Framework_TestCase {
 	/**
 	 * @expectedException \Lti\Exceptions\InvalidTimestampException
 	 */
-	function test_setTimestampExpiration_expire(){
+	function test_setTimestampExpiration_expire() {
 
 		$params = [
 			"oauth_nonce"            => "snarktastic",
@@ -73,7 +73,7 @@ class SlimOauthTest extends \PHPUnit_Framework_TestCase {
 	/**
 	 * @expectedException \Lti\Exceptions\InvalidHashMethodException
 	 */
-	function test_InvalidHashMethodException(){
+	function test_InvalidHashMethodException() {
 
 		$params = [
 			"oauth_nonce"            => "snarktastic",
@@ -98,7 +98,7 @@ class SlimOauthTest extends \PHPUnit_Framework_TestCase {
 	/**
 	 * @expectedException \Lti\Exceptions\InvalidCallbackException
 	 */
-	function test_InvalidCallbackException(){
+	function test_InvalidCallbackException() {
 
 		$params = [
 			"oauth_nonce"            => "snarktastic",
@@ -123,7 +123,7 @@ class SlimOauthTest extends \PHPUnit_Framework_TestCase {
 	/**
 	 * @expectedException \Lti\Exceptions\InvalidVersionException
 	 */
-	function test_InvalidVersionException(){
+	function test_InvalidVersionException() {
 
 		$params = [
 			"oauth_nonce"            => "snarktastic",
@@ -148,7 +148,7 @@ class SlimOauthTest extends \PHPUnit_Framework_TestCase {
 	/**
 	 * @expectedException \Lti\Exceptions\MissingRequiredParameterException
 	 */
-	function test_MissingRequiredParameterException(){
+	function test_MissingRequiredParameterException() {
 
 		$params = [
 			"oauth_nonce"            => "snarktastic",
@@ -169,7 +169,7 @@ class SlimOauthTest extends \PHPUnit_Framework_TestCase {
 
 	}
 
-	function test_createSignature_valid_nonce(){
+	function test_createSignature_valid_nonce() {
 
 		$params = [
 			"oauth_nonce"            => "snarktastic",
@@ -194,7 +194,7 @@ class SlimOauthTest extends \PHPUnit_Framework_TestCase {
 	/**
 	 * @expectedException \Lti\Exceptions\InvalidNonceException
 	 */
-	function test_createSignature_invalid_nonce(){
+	function test_createSignature_invalid_nonce() {
 
 		$params = [
 			"oauth_nonce"            => "snarktastic",
@@ -216,7 +216,7 @@ class SlimOauthTest extends \PHPUnit_Framework_TestCase {
 
 	}
 
-	function test_verifySignature_true(){
+	function test_verifySignature_true() {
 
 		$params = [
 			"oauth_nonce"            => "snarktastic",
@@ -237,7 +237,7 @@ class SlimOauthTest extends \PHPUnit_Framework_TestCase {
 
 	}
 
-	function test_create_and_verify_signature(){
+	function test_create_and_verify_signature() {
 
 		$params = [
 			"oauth_nonce"            => "snarktastic",
@@ -260,7 +260,7 @@ class SlimOauthTest extends \PHPUnit_Framework_TestCase {
 
 	}
 
-	function test_verifySignature_additional_params(){
+	function test_verifySignature_additional_params() {
 
 		$params = [
 			"oauth_nonce"            => "snarktastic",
@@ -282,7 +282,7 @@ class SlimOauthTest extends \PHPUnit_Framework_TestCase {
 
 	}
 
-	function test_verifySignature_false(){
+	function test_verifySignature_false() {
 
 		$params = [
 			"oauth_nonce"            => "snarktastic",
@@ -306,7 +306,7 @@ class SlimOauthTest extends \PHPUnit_Framework_TestCase {
 	/**
 	 * @expectedException \Lti\Exceptions\MissingRequiredParameterException
 	 */
-	function test_verifySignature_exception(){
+	function test_verifySignature_exception() {
 
 		$params = [
 			"oauth_nonce"            => "snarktastic",
