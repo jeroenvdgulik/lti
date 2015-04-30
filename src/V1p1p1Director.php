@@ -22,56 +22,87 @@ class V1p1p1Director {
 		if(isset($params["lti_message_type"])){
 			$this->builder->setLtiMessageType($params["lti_message_type"]);
 		}else{
-			throw new Exceptions\MissingRequiredParameterException("LTI v 1.1 requires the paramter 'lti_message_type'.");
+			throw new Exceptions\MissingRequiredParameterException("LTI v 1.x requires the paramter 'lti_message_type'.");
 		}
 
 		if(isset($params["lti_version"])){
 			$this->builder->setLtiVersion($params["lti_version"]);
 		}else{
-			throw new Exceptions\MissingRequiredParameterException("LTI v 1.1 requires the paramter 'lti_version'.");
+			throw new Exceptions\MissingRequiredParameterException("LTI v 1.x requires the paramter 'lti_version'.");
 		}
 
 		if(isset($params["resource_link_id"])){
 			$this->builder->setResourceLinkId($params["resource_link_id"]);
 		}else{
-			throw new Exceptions\MissingRequiredParameterException("LTI v 1.1 requires the paramter 'resource_link_id'.");
+			throw new Exceptions\MissingRequiredParameterException("LTI v 1.x requires the paramter 'resource_link_id'.");
 		}
 
 		// RECOMMENDED or OPTIONAL
 		////////////////////////////////////////////////////////////////////////
 
-		$this->builder->setResourceLinkTitle(isset($params["resource_link_title"]) ? $params["resource_link_title"] : null);
-		$this->builder->setResourceLinkDescription(isset($params["resource_link_description"]) ? $params["resource_link_description"] : null);
-		$this->builder->setUserId(isset($params["user_id"]) ? $params["user_id"] : null);
-		$this->builder->setUserImage(isset($params["user_image"]) ? $params["user_image"] : null);
-		$this->builder->setRoles(isset($params["roles"]) ? $params["roles"] : null);
-		$this->builder->setRoleScopeMentor(isset($params["role_scope_mentor"]) ? $params["role_scope_mentor"] : null);
-		$this->builder->setLisPersonNameGiven(isset($params["lis_person_name_given"]) ? $params["lis_person_name_given"] : null);
-		$this->builder->setLisPersonNameFamily(isset($params["lis_person_name_family"]) ? $params["lis_person_name_family"] : null);
-		$this->builder->setLisPersonNameFull(isset($params["lis_person_name_full"]) ? $params["lis_person_name_full"] : null);
-		$this->builder->setLisPersonContactEmailPrimary(isset($params["lis_person_contact_email_primary"]) ? $params["lis_person_contact_email_primary"] : null);
-		$this->builder->setContextId(isset($params["context_id"]) ? $params["context_id"] : null);
-		$this->builder->setContextType(isset($params["context_type"]) ? $params["context_type"] : null);
-		$this->builder->setContextTitle(isset($params["context_title"]) ? $params["context_title"] : null);
-		$this->builder->setContextLabel(isset($params["context_label"]) ? $params["context_label"] : null);
-		$this->builder->setLaunchPresentationLocale(isset($params["launch_presentation_locale"]) ? $params["launch_presentation_locale"] : null);
-		$this->builder->setLaunchPresentationDocumentTarget(isset($params["launch_presentation_document_target"]) ? $params["launch_presentation_document_target"] : null);
-		$this->builder->setLaunchPresentationCssUrl(isset($params["launch_presentation_css_url"]) ? $params["launch_presentation_css_url"] : null);
-		$this->builder->setLaunchPresentationWidth(isset($params["launch_presentation_width"]) ? $params["launch_presentation_width"] : null);
-		$this->builder->setLaunchPresentationHeight(isset($params["launch_presentation_height"]) ? $params["launch_presentation_height"] : null);
-		$this->builder->setLaunchPresentationReturnUrl(isset($params["launch_presentation_return_url"]) ? $params["launch_presentation_return_url"] : null);
-		$this->builder->setToolConsumerInfoProductFamilyCode(isset($params["tool_consumer_info_product_family_code"]) ? $params["tool_consumer_info_product_family_code"] : null);
-		$this->builder->setToolConsumerInfoVersion(isset($params["tool_consumer_info_version"]) ? $params["tool_consumer_info_version"] : null);
-		$this->builder->setToolConsumerInstanceGuid(isset($params["tool_consumer_instance_guid"]) ? $params["tool_consumer_instance_guid"] : null);
-		$this->builder->setToolConsumerInstanceName(isset($params["tool_consumer_instance_name"]) ? $params["tool_consumer_instance_name"] : null);
-		$this->builder->setToolConsumerInstanceDescription(isset($params["tool_consumer_instance_description"]) ? $params["tool_consumer_instance_description"] : null);
-		$this->builder->setToolConsumerInstanceUrl(isset($params["tool_consumer_instance_url"]) ? $params["tool_consumer_instance_url"] : null);
-		$this->builder->setToolConsumerInstanceContactEmail(isset($params["tool_consumer_instance_contact_email"]) ? $params["tool_consumer_instance_contact_email"] : null);
-		$this->builder->setLisResultSourcedid(isset($params["lis_result_sourcedid"]) ? $params["lis_result_sourcedid"] : null);
-		$this->builder->setLisOutcomeServiceUrl(isset($params["lis_outcome_service_url"]) ? $params["lis_outcome_service_url"] : null);
-		$this->builder->setLisPersonSourcedid(isset($params["lis_person_sourcedid"]) ? $params["lis_person_sourcedid"] : null);
-		$this->builder->setLisCourseOfferingsourcedid(isset($params["lis_course_offering_sourcedid"]) ? $params["lis_course_offering_sourcedid"] : null);
-		$this->builder->setLisCourseSectionsourcedid(isset($params["lis_course_section_sourcedid"]) ? $params["lis_course_section_sourcedid"] : null);
+		$this->builder->setResourceLinkTitle($this->getKey($params, "resource_link_title"));
+
+		$this->builder->setResourceLinkDescription($this->getKey($params, "resource_link_description"));
+
+		$this->builder->setUserId($this->getKey($params, "user_id"));
+
+		$this->builder->setUserImage($this->getKey($params, "user_image"));
+
+		$this->builder->setRoles($this->getKey($params, "roles"));
+
+		$this->builder->setRoleScopeMentor($this->getKey($params, "role_scope_mentor"));
+
+		$this->builder->setLisPersonNameGiven($this->getKey($params, "lis_person_name_given"));
+
+		$this->builder->setLisPersonNameFamily($this->getKey($params, "lis_person_name_family"));
+
+		$this->builder->setLisPersonNameFull($this->getKey($params, "lis_person_name_full"));
+
+		$this->builder->setLisPersonContactEmailPrimary($this->getKey($params, "lis_person_contact_email_primary"));
+
+		$this->builder->setContextId($this->getKey($params, "context_id"));
+
+		$this->builder->setContextType($this->getKey($params, "context_type"));
+
+		$this->builder->setContextTitle($this->getKey($params, "context_title"));
+
+		$this->builder->setContextLabel($this->getKey($params, "context_label"));
+
+		$this->builder->setLaunchPresentationLocale($this->getKey($params, "launch_presentation_locale"));
+
+		$this->builder->setLaunchPresentationDocumentTarget($this->getKey($params, "launch_presentation_document_target"));
+
+		$this->builder->setLaunchPresentationCssUrl($this->getKey($params, "launch_presentation_css_url"));
+
+		$this->builder->setLaunchPresentationWidth($this->getKey($params, "launch_presentation_width"));
+
+		$this->builder->setLaunchPresentationHeight($this->getKey($params, "launch_presentation_height"));
+
+		$this->builder->setLaunchPresentationReturnUrl($this->getKey($params, "launch_presentation_return_url"));
+
+		$this->builder->setToolConsumerInfoProductFamilyCode($this->getKey($params, "tool_consumer_info_product_family_code"));
+
+		$this->builder->setToolConsumerInfoVersion($this->getKey($params, "tool_consumer_info_version"));
+
+		$this->builder->setToolConsumerInstanceGuid($this->getKey($params, "tool_consumer_instance_guid"));
+
+		$this->builder->setToolConsumerInstanceName($this->getKey($params, "tool_consumer_instance_name"));
+
+		$this->builder->setToolConsumerInstanceDescription($this->getKey($params, "tool_consumer_instance_description"));
+
+		$this->builder->setToolConsumerInstanceUrl($this->getKey($params, "tool_consumer_instance_url"));
+
+		$this->builder->setToolConsumerInstanceContactEmail($this->getKey($params, "tool_consumer_instance_contact_email"));
+
+		$this->builder->setLisResultSourcedid($this->getKey($params, "lis_result_sourcedid"));
+
+		$this->builder->setLisOutcomeServiceUrl($this->getKey($params, "lis_outcome_service_url"));
+
+		$this->builder->setLisPersonSourcedid($this->getKey($params, "lis_person_sourcedid"));
+
+		$this->builder->setLisCourseOfferingsourcedid($this->getKey($params, "lis_course_offering_sourcedid"));
+
+		$this->builder->setLisCourseSectionsourcedid($this->getKey($params, "lis_course_section_sourcedid"));
 
 		$custom = [];
 		foreach($params as $key => $value){
@@ -91,4 +122,9 @@ class V1p1p1Director {
 
 		$this->builder->setExtParams($ext);
 	}
+
+	protected function getKey(array $params, $key){
+		return isset($params[$key]) ? $params[$key] : null;
+	}
+
 }
