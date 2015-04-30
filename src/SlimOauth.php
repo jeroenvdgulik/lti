@@ -30,7 +30,7 @@ class SlimOauth {
 	/**
 	 * the general use case is tied to a specific request
 	 * @param string $endpoint The requested endpoint to use in signing
-	 * @param NonceMapperInterface $$nonmapper The data source for checking nonces
+	 * @param NonceMapperInterface $nonceMapper The data source for checking nonces
 	 */
 	public function __construct($endpoint, NonceMapperInterface $nonceMapper) {
 		$this->setEndpoint($endpoint);
@@ -40,7 +40,7 @@ class SlimOauth {
 	/**
 	 * protected properties that *could* change given certain use cases should have
 	 * an accessor method
-	 * @param string $endopint The URL to use in the signature
+	 * @param string $endpoint The URL to use in the signature
 	 */
 	public function setEndpoint($endpoint) {
 		$this->endpoint = $endpoint;
@@ -58,7 +58,7 @@ class SlimOauth {
 	/**
 	 * this allows the adjustment of the timestamp tolerance (in minutes). a 0 (zero)
 	 * value means no expiration
-	 * @param numeric $minutes The max age in minutes of a valid timestamp
+	 * @param int $minutes The max age in minutes of a valid timestamp
 	 */
 	public function setTimestampExpiration($minutes) {
 		$this->timestampExpiration = $minutes;
