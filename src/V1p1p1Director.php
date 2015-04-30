@@ -6,15 +6,15 @@ class V1p1p1Director {
 
 	protected $builder;
 
-	public function __construct(V1p1p1Builder $builder){
+	public function __construct(V1p1p1Builder $builder) {
 		$this->builder = $builder;
 	}
 
-	public function getLtiRequest(){
+	public function getLtiRequest() {
 		return $this->builder->build();
 	}
 
-	public function buildLtiRequest(array $params){
+	public function buildLtiRequest(array $params) {
 
 		//necessary for constants
 		$builder = $this->builder;
@@ -22,19 +22,19 @@ class V1p1p1Director {
 		// REQUIRED
 		////////////////////////////////////////////////////////////////////////
 
-		if(isset($params[$builder::LTI_MESSAGE_TYPE])){
+		if(isset($params[$builder::LTI_MESSAGE_TYPE])) {
 			$this->builder->setLtiMessageType($params[$builder::LTI_MESSAGE_TYPE]);
 		}else{
 			throw new Exceptions\MissingRequiredParameterException("LTI v 1.x requires the paramter 'lti_message_type'.");
 		}
 
-		if(isset($params[$builder::LTI_VERSION])){
+		if(isset($params[$builder::LTI_VERSION])) {
 			$this->builder->setLtiVersion($params[$builder::LTI_VERSION]);
 		}else{
 			throw new Exceptions\MissingRequiredParameterException("LTI v 1.x requires the paramter 'lti_version'.");
 		}
 
-		if(isset($params[$builder::RESOURCE_LINK_ID])){
+		if(isset($params[$builder::RESOURCE_LINK_ID])) {
 			$this->builder->setResourceLinkId($params[$builder::RESOURCE_LINK_ID]);
 		}else{
 			throw new Exceptions\MissingRequiredParameterException("LTI v 1.x requires the paramter 'resource_link_id'.");
@@ -108,8 +108,8 @@ class V1p1p1Director {
 		$this->builder->setLisCourseSectionsourcedid($this->getKey($params, $builder::LIS_COURSE_SECTION_SOURCEDID));
 
 		$custom = [];
-		foreach($params as $key => $value){
-			if(stripos($key, $builder::PREFIX_CUSTOM) === 0){
+		foreach($params as $key => $value) {
+			if(stripos($key, $builder::PREFIX_CUSTOM) === 0) {
 				$custom[$key] = $value;
 			}
 		}
@@ -117,8 +117,8 @@ class V1p1p1Director {
 		$this->builder->setCustomParams($custom);
 
 		$ext = [];
-		foreach($params as $key => $value){
-			if(stripos($key, $builder::PREFIX_EXT) === 0){
+		foreach($params as $key => $value) {
+			if(stripos($key, $builder::PREFIX_EXT) === 0) {
 				$ext[$key] = $value;
 			}
 		}
@@ -126,7 +126,7 @@ class V1p1p1Director {
 		$this->builder->setExtParams($ext);
 	}
 
-	protected function getKey(array $params, $key){
+	protected function getKey(array $params, $key) {
 		return isset($params[$key]) ? $params[$key] : null;
 	}
 

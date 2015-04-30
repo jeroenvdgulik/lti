@@ -9,7 +9,7 @@ class V1p1p1 extends V1p1 implements V1p1p1Interface {
 	/**
 	 * get the role_scope_mentor
 	 */
-	public function getRoleScopeMentor(){
+	public function getRoleScopeMentor() {
 		return $this->role_scope_mentor;
 	}
 
@@ -51,7 +51,7 @@ class V1p1p1 extends V1p1 implements V1p1p1Interface {
 		$lis_course_section_sourcedid,
 		array $custom_,
 		array $ext_
-	){
+	) {
 		$this->lti_message_type                     = $lti_message_type;
 		$this->lti_version                          = $lti_version;
 		$this->resource_link_id                     = $resource_link_id;

@@ -45,7 +45,7 @@ class V1p1p1Builder extends V1p1Builder implements V1p1p1BuilderInterface {
 		self::LIS_COURSE_SECTION_SOURCEDID           => null,
 	];
 
-	public function build(){
+	public function build() {
 		return new V1p1p1(
 			$this->inst[self::LTI_MESSAGE_TYPE],
 			$this->inst[self::LTI_VERSION],
@@ -91,7 +91,7 @@ class V1p1p1Builder extends V1p1Builder implements V1p1p1BuilderInterface {
 	 * set the launch_presentation_css_url
 	 * @param string $launch_presentation_css_url
 	 */
-	public function setRoleScopeMentor($role_scope_mentor){
+	public function setRoleScopeMentor($role_scope_mentor) {
 		$this->inst[self::ROLE_SCOPE_MENTOR] = $role_scope_mentor;
 	}
 

@@ -75,7 +75,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 
 	protected $ext    = [];
 
-	public function build(){
+	public function build() {
 		return new V1p0(
 			$this->inst[self::LTI_MESSAGE_TYPE],
 			$this->inst[self::LTI_VERSION],
@@ -116,7 +116,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * set the lti_message_type
 	 * @param string $lti_message_type
 	 */
-	public function setLtiMessageType($lti_message_type){
+	public function setLtiMessageType($lti_message_type) {
 		$this->inst[self::LTI_MESSAGE_TYPE] = $lti_message_type;
 	}
 
@@ -124,7 +124,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * set the lti_version
 	 * @param string $lti_version
 	 */
-	public function setLtiVersion($lti_version){
+	public function setLtiVersion($lti_version) {
 		$this->inst[self::LTI_VERSION] = $lti_version;
 	}
 
@@ -132,7 +132,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * set the resource_link_id
 	 * @param string $resource_link_id
 	 */
-	public function setResourceLinkId($resource_link_id){
+	public function setResourceLinkId($resource_link_id) {
 		$this->inst[self::RESOURCE_LINK_ID] = $resource_link_id;
 	}
 
@@ -140,7 +140,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * set the resource_link_title
 	 * @param string $resource_link_title
 	 */
-	public function setResourceLinkTitle($resource_link_title){
+	public function setResourceLinkTitle($resource_link_title) {
 		$this->inst[self::RESOURCE_LINK_TITLE] = $resource_link_title;
 	}
 
@@ -148,7 +148,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * set the resource_link_description
 	 * @param string $resource_link_description
 	 */
-	public function setResourceLinkDescription($resource_link_description){
+	public function setResourceLinkDescription($resource_link_description) {
 		$this->inst[self::RESOURCE_LINK_DESCRIPTION] = $resource_link_description;
 	}
 
@@ -156,7 +156,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * set the user_id
 	 * @param string $user_id
 	 */
-	public function setUserId($user_id){
+	public function setUserId($user_id) {
 		$this->inst[self::USER_ID] = $user_id;
 	}
 
@@ -164,7 +164,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * set the user_image
 	 * @param string $user_image
 	 */
-	public function setUserImage($user_image){
+	public function setUserImage($user_image) {
 		$this->inst[self::USER_IMAGE] = $user_image;
 	}
 
@@ -172,7 +172,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * set the roles
 	 * @param string $roles
 	 */
-	public function setRoles($roles){
+	public function setRoles($roles) {
 		$this->inst[self::ROLES] = $roles;
 	}
 
@@ -180,7 +180,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * set the lis_person_name_given
 	 * @param string $lis_person_name_given
 	 */
-	public function setLisPersonNameGiven($lis_person_name_given){
+	public function setLisPersonNameGiven($lis_person_name_given) {
 		$this->inst[self::LIS_PERSON_NAME_GIVEN] = $lis_person_name_given;
 	}
 
@@ -188,7 +188,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * set the lis_person_name_family
 	 * @param string $lis_person_name_family
 	 */
-	public function setLisPersonNameFamily($lis_person_name_family){
+	public function setLisPersonNameFamily($lis_person_name_family) {
 		$this->inst[self::LIS_PERSON_NAME_FAMILY] = $lis_person_name_family;
 	}
 
@@ -196,7 +196,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * set the lis_person_name_full
 	 * @param string $lis_person_name_full
 	 */
-	public function setLisPersonNameFull($lis_person_name_full){
+	public function setLisPersonNameFull($lis_person_name_full) {
 		$this->inst[self::LIS_PERSON_NAME_FULL] = $lis_person_name_full;
 	}
 
@@ -204,7 +204,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * set the lis_person_contact_email_primary
 	 * @param string $lis_person_contact_email_primary
 	 */
-	public function setLisPersonContactEmailPrimary($lis_person_contact_email_primary){
+	public function setLisPersonContactEmailPrimary($lis_person_contact_email_primary) {
 		$this->inst[self::LIS_PERSON_CONTACT_EMAIL_PRIMARY] = $lis_person_contact_email_primary;
 	}
 
@@ -212,7 +212,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * set the context_id
 	 * @param string $context_id
 	 */
-	public function setContextId($context_id){
+	public function setContextId($context_id) {
 		$this->inst[self::CONTEXT_ID] = $context_id;
 	}
 
@@ -220,7 +220,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * set the context_type
 	 * @param string $context_type
 	 */
-	public function setContextType($context_type){
+	public function setContextType($context_type) {
 		$this->inst[self::CONTEXT_TYPE] = $context_type;
 	}
 
@@ -228,7 +228,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * set the context_title
 	 * @param string $context_title
 	 */
-	public function setContextTitle($context_title){
+	public function setContextTitle($context_title) {
 		$this->inst[self::CONTEXT_TITLE] = $context_title;
 	}
 
@@ -236,7 +236,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * set the context_label
 	 * @param string $context_label
 	 */
-	public function setContextLabel($context_label){
+	public function setContextLabel($context_label) {
 		$this->inst[self::CONTEXT_LABEL] = $context_label;
 	}
 
@@ -244,7 +244,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * set the launch_presentation_locale
 	 * @param string $launch_presentation_locale
 	 */
-	public function setLaunchPresentationLocale($launch_presentation_locale){
+	public function setLaunchPresentationLocale($launch_presentation_locale) {
 		$this->inst[self::LAUNCH_PRESENTATION_LOCALE] = $launch_presentation_locale;
 	}
 
@@ -252,7 +252,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * set the launch_presentation_document_target
 	 * @param string $launch_presentation_document_target
 	 */
-	public function setLaunchPresentationDocumentTarget($launch_presentation_document_target){
+	public function setLaunchPresentationDocumentTarget($launch_presentation_document_target) {
 		$this->inst[self::LAUNCH_PRESENTATION_DOCUMENT_TARGET] = $launch_presentation_document_target;
 	}
 
@@ -260,7 +260,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * set the launch_presentation_width
 	 * @param string $launch_presentation_width
 	 */
-	public function setLaunchPresentationWidth($launch_presentation_width){
+	public function setLaunchPresentationWidth($launch_presentation_width) {
 		$this->inst[self::LAUNCH_PRESENTATION_WIDTH] = $launch_presentation_width;
 	}
 
@@ -268,7 +268,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * set the launch_presentation_height
 	 * @param string $launch_presentation_height
 	 */
-	public function setLaunchPresentationHeight($launch_presentation_height){
+	public function setLaunchPresentationHeight($launch_presentation_height) {
 		$this->inst[self::LAUNCH_PRESENTATION_HEIGHT] = $launch_presentation_height;
 	}
 
@@ -276,7 +276,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * set the launch_presentation_return_url
 	 * @param string $launch_presentation_return_url
 	 */
-	public function setLaunchPresentationReturnUrl($launch_presentation_return_url){
+	public function setLaunchPresentationReturnUrl($launch_presentation_return_url) {
 		$this->inst[self::LAUNCH_PRESENTATION_RETURN_URL] = $launch_presentation_return_url;
 	}
 
@@ -284,7 +284,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * set the tool_consumer_instance_guid
 	 * @param string $tool_consumer_instance_guid
 	 */
-	public function setToolConsumerInstanceGuid($tool_consumer_instance_guid){
+	public function setToolConsumerInstanceGuid($tool_consumer_instance_guid) {
 		$this->inst[self::TOOL_CONSUMER_INSTANCE_GUID] = $tool_consumer_instance_guid;
 	}
 
@@ -292,7 +292,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * set the tool_consumer_instance_name
 	 * @param string $tool_consumer_instance_name
 	 */
-	public function setToolConsumerInstanceName($tool_consumer_instance_name){
+	public function setToolConsumerInstanceName($tool_consumer_instance_name) {
 		$this->inst[self::TOOL_CONSUMER_INSTANCE_NAME] = $tool_consumer_instance_name;
 	}
 
@@ -300,7 +300,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * set the tool_consumer_instance_description
 	 * @param string $tool_consumer_instance_description
 	 */
-	public function setToolConsumerInstanceDescription($tool_consumer_instance_description){
+	public function setToolConsumerInstanceDescription($tool_consumer_instance_description) {
 		$this->inst[self::TOOL_CONSUMER_INSTANCE_DESCRIPTION] = $tool_consumer_instance_description;
 	}
 
@@ -308,7 +308,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * set the tool_consumer_instance_url
 	 * @param string $tool_consumer_instance_url
 	 */
-	public function setToolConsumerInstanceUrl($tool_consumer_instance_url){
+	public function setToolConsumerInstanceUrl($tool_consumer_instance_url) {
 		$this->inst[self::TOOL_CONSUMER_INSTANCE_URL] = $tool_consumer_instance_url;
 	}
 
@@ -316,7 +316,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * set the tool_consumer_instance_contact_email
 	 * @param string $tool_consumer_instance_contact_email
 	 */
-	public function setToolConsumerInstanceContactEmail($tool_consumer_instance_contact_email){
+	public function setToolConsumerInstanceContactEmail($tool_consumer_instance_contact_email) {
 		$this->inst[self::TOOL_CONSUMER_INSTANCE_CONTACT_EMAIL] = $tool_consumer_instance_contact_email;
 	}
 
@@ -324,7 +324,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * set the lis_result_sourcedid
 	 * @param string $lis_result_sourcedid
 	 */
-	public function setLisResultSourcedid($lis_result_sourcedid){
+	public function setLisResultSourcedid($lis_result_sourcedid) {
 		$this->inst[self::LIS_RESULT_SOURCEDID] = $lis_result_sourcedid;
 	}
 
@@ -332,7 +332,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * set the lis_person_sourcedid
 	 * @param string $lis_person_sourcedid
 	 */
-	public function setLisPersonSourcedid($lis_person_sourcedid){
+	public function setLisPersonSourcedid($lis_person_sourcedid) {
 		$this->inst[self::LIS_PERSON_SOURCEDID] = $lis_person_sourcedid;
 	}
 
@@ -340,7 +340,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * set the lis_course_offering_sourcedid
 	 * @param string $lis_course_offering_sourcedid
 	 */
-	public function setLisCourseOfferingsourcedid($lis_course_offering_sourcedid){
+	public function setLisCourseOfferingsourcedid($lis_course_offering_sourcedid) {
 		$this->inst[self::LIS_COURSE_OFFERING_SOURCEDID] = $lis_course_offering_sourcedid;
 	}
 
@@ -348,7 +348,7 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * set the lis_course_section_sourcedid
 	 * @param string $lis_course_section_sourcedid
 	 */
-	public function setLisCourseSectionsourcedid($lis_course_section_sourcedid){
+	public function setLisCourseSectionsourcedid($lis_course_section_sourcedid) {
 		$this->inst[self::LIS_COURSE_SECTION_SOURCEDID] = $lis_course_section_sourcedid;
 	}
 
@@ -356,10 +356,10 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * set custom params
 	 * @param array $params An array of custom_key => value pair
 	 */
-	public function setCustomParams(array $params){
-		foreach($params as $key => $value){
+	public function setCustomParams(array $params) {
+		foreach($params as $key => $value) {
 			$key = strtolower($key);
-			if(strpos($key, self::PREFIX_CUSTOM) === 0){
+			if(strpos($key, self::PREFIX_CUSTOM) === 0) {
 				$this->custom[$key] = $value;
 			}
 		}
@@ -369,10 +369,10 @@ class V1p0Builder implements V1p0BuilderInterface {
 	 * set ext params
 	 * @param array $params An array of ext_key => value pair
 	 */
-	public function setExtParams(array $params){
-		foreach($params as $key => $value){
+	public function setExtParams(array $params) {
+		foreach($params as $key => $value) {
 			$key = strtolower($key);
-			if(strpos($key, self::PREFIX_EXT) === 0){
+			if(strpos($key, self::PREFIX_EXT) === 0) {
 				$this->ext[$key] = $value;
 			}
 		}

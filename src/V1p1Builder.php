@@ -47,7 +47,7 @@ class V1p1Builder extends V1p0Builder implements V1p1BuilderInterface {
 		self::LIS_COURSE_SECTION_SOURCEDID           => null,
 	];
 
-	public function build(){
+	public function build() {
 		return new V1p1(
 			$this->inst[self::LTI_MESSAGE_TYPE],
 			$this->inst[self::LTI_VERSION],
@@ -92,7 +92,7 @@ class V1p1Builder extends V1p0Builder implements V1p1BuilderInterface {
 	 * set the launch_presentation_css_url
 	 * @param string $launch_presentation_css_url
 	 */
-	public function setLaunchPresentationCssUrl($launch_presentation_css_url){
+	public function setLaunchPresentationCssUrl($launch_presentation_css_url) {
 		$this->inst[self::LAUNCH_PRESENTATION_CSS_URL] = $launch_presentation_css_url;
 	}
 
@@ -100,7 +100,7 @@ class V1p1Builder extends V1p0Builder implements V1p1BuilderInterface {
 	 * set the tool_consumer_info_product_family_code
 	 * @param string $tool_consumer_info_product_family_code
 	 */
-	public function setToolConsumerInfoProductFamilyCode($tool_consumer_info_product_family_code){
+	public function setToolConsumerInfoProductFamilyCode($tool_consumer_info_product_family_code) {
 		$this->inst[self::TOOL_CONSUMER_INFO_PRODUCT_FAMILY_CODE] = $tool_consumer_info_product_family_code;
 	}
 
@@ -108,7 +108,7 @@ class V1p1Builder extends V1p0Builder implements V1p1BuilderInterface {
 	 * set the tool_consumer_info_version
 	 * @param string $tool_consumer_info_version
 	 */
-	public function setToolConsumerInfoVersion($tool_consumer_info_version){
+	public function setToolConsumerInfoVersion($tool_consumer_info_version) {
 		$this->inst[self::TOOL_CONSUMER_INFO_VERSION] = $tool_consumer_info_version;
 	}
 
@@ -116,7 +116,7 @@ class V1p1Builder extends V1p0Builder implements V1p1BuilderInterface {
 	 * set the lis_outcome_service_url
 	 * @param string $lis_outcome_service_url
 	 */
-	public function setLisOutcomeServiceUrl($lis_outcome_service_url){
+	public function setLisOutcomeServiceUrl($lis_outcome_service_url) {
 		$this->inst[self::LIS_OUTCOME_SERVICE_URL] = $lis_outcome_service_url;
 	}
 
